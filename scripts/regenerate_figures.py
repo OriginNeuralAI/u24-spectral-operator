@@ -239,7 +239,7 @@ def fig_h2_topology():
 
     # VR lifetimes
     ext_results = extended["results"]
-    n_zeros = [r["n_zeros"] for r in ext_results]
+    n_zeros = [r.get("n_zeros", r.get("n")) for r in ext_results]
     h2_life = [r["h2_max_life"] for r in ext_results]
 
     ax = axes[1]

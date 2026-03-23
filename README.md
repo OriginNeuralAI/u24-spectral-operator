@@ -10,10 +10,12 @@
 
 ---
 
+[![CI](https://github.com/OriginNeuralAI/u24-spectral-operator/actions/workflows/validate.yml/badge.svg)](https://github.com/OriginNeuralAI/u24-spectral-operator/actions/workflows/validate.yml)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2603.XXXXX)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXX-blue.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
 [![Data: Open](https://img.shields.io/badge/Data-Open-brightgreen.svg)](#data)
-[![Verification](https://img.shields.io/badge/Verification-133%2F133_checks-D4AF37.svg)](#verification)
+[![Verification](https://img.shields.io/badge/Verification-133%2F133_checks-D4AF37.svg)](#verification-dashboard)
 [![Reproducible](https://img.shields.io/badge/Reproducible-with_public_tools-blue.svg)](#notebooks)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 
@@ -42,6 +44,10 @@
 
 We construct a self-adjoint operator **H_D** acting on **C²³ ⊗ L₂([0,2π])** whose spectral statistics reproduce Riemann zeta zero correlations to within ‖R₂ − R₂^GUE‖₂ = **0.026**. The 23-dimensional internal space is fixed uniquely by requiring H₂ = 0 for the spacing manifold (verified from N = 10³ to height ~10²² at **7 scales**), recovering the Leech lattice Λ₂₄ and linking the operator's spectrum to Monster group moonshine. As a corollary, the universality constant **Ω = 24** determines the fine-structure constant α_EM ≈ **1/137.03** with zero free parameters (error **0.005%**).
 
+<div align="center">
+<img src="assets/operator-decomposition.svg" alt="Operator decomposition H_D = J⊗I + I⊗T + V_HP + V_Z" width="720"/>
+</div>
+
 ## Verification Dashboard
 
 **133 / 133** automated checks pass across four categories:
@@ -52,6 +58,10 @@ We construct a self-adjoint operator **H_D** acting on **C²³ ⊗ L₂([0,2π])
 | RH Bridge | 26 | ✓ | Isomorphic Engine certificate validation, zero matching |
 | GUE Form Factor | 46 | ✓ | Pair correlation R₂(r), level spacing, KS tests |
 | Spectral Inclusion | 15 | ✓ | Monster prime peaks detected in spectral data (**14/15** detected) |
+
+<div align="center">
+<img src="assets/verification-pipeline.svg" alt="Verification pipeline: 133/133 checks pass" width="720"/>
+</div>
 
 <details>
 <summary>9-Scale Convergence Table</summary>
@@ -82,6 +92,35 @@ The L₂ norm of the difference between the observed R₂(r) and the GUE predict
 >
 > **What requires trust.** The zero-finding at N > **2000** and the Odlyzko-height blocks rely on the Engine's Riemann-Siegel implementation. We provide the numerical outputs but cannot release the source code.
 
+## Visual Guide
+
+<details>
+<summary><strong>Symmetry Cascade</strong> — Monster → Co₁ → Λ₂₄ → E₈ → SU(5) → SM → U(1)_EM</summary>
+
+<div align="center">
+<img src="assets/symmetry-cascade.svg" alt="Symmetry cascade from Monster group to electromagnetism" width="600"/>
+</div>
+
+</details>
+
+<details>
+<summary><strong>Eleven Paths to Ω = 24</strong> — 11 independent derivations of the universality constant</summary>
+
+<div align="center">
+<img src="assets/eleven-paths.svg" alt="Eleven independent paths to Omega = 24" width="600"/>
+</div>
+
+</details>
+
+<details>
+<summary><strong>Basin Structure</strong> — Reeds endomorphism f: Z₂₃ → Z₂₃, cycle type (3,3,2,1)</summary>
+
+<div align="center">
+<img src="assets/basin-structure.svg" alt="Four attractor basins of the Reeds endomorphism" width="600"/>
+</div>
+
+</details>
+
 ## Repository Structure
 
 ```
@@ -101,8 +140,9 @@ u24-spectral-operator/
 │   └── quantum-graph/           # Γ₀(23) quantum graph structure
 ├── notebooks/                   # 8 Jupyter notebooks (guided analysis)
 ├── scripts/                     # Validation, reconstruction, figure generation
-├── figures/                     # Generated output
-└── assets/                      # Hero SVG
+├── figures/                     # Generated output (run regenerate_figures.py)
+├── assets/                      # Diagrams: hero, operator, cascade, basins, paths, pipeline
+└── CONTRIBUTING.md              # Reproducibility and contribution guide
 ```
 
 ## Data
