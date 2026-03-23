@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+title: "U24 Spectral Operator"
+message: "If you use this data or notebooks, please cite the papers below."
+type: dataset
+authors:
+  - family-names: Daugherty
+    given-names: Bryan
+  - family-names: Ward
+    given-names: Gregory
+  - family-names: Ryan
+    given-names: Shawn
+repository-code: "https://github.com/OriginNeuralAI/u24-spectral-operator"
+license: CC-BY-4.0
+date-released: "2026-03-23"
+version: "1.0.0"
+doi: 10.5281/zenodo.XXXXXXX
+keywords:
+  - Riemann hypothesis
+  - spectral operator
+  - random matrix theory
+  - GUE
+  - Monster group
+  - moonshine
+  - fine-structure constant
+  - persistent homology
+  - Leech lattice
+references:
+  - type: article
+    title: "A Spectral Operator for the Riemann Hypothesis"
+    authors:
+      - family-names: Daugherty
+        given-names: Bryan
+      - family-names: Ward
+        given-names: Gregory
+      - family-names: Ryan
+        given-names: Shawn
+    year: 2026
+    month: 3
+  - type: article
+    title: "The Universality Constant: Eleven Paths to Omega = 24"
+    authors:
+      - family-names: Daugherty
+        given-names: Bryan
+      - family-names: Ward
+        given-names: Gregory
+      - family-names: Ryan
+        given-names: Shawn
+    year: 2026
+    month: 3
