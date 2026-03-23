@@ -153,7 +153,7 @@ def main():
 
     # Image size
     image = set(soyga_f(x) for x in range(23))
-    print(f"  |Im(f)| = {len(image)}  (should be 10)")
+    print(f"  |Im(f)| = {len(image)}  (should be 11)")
 
     # Verify f^6 = f^12 (order of f on eventual image is 6)
     all_converge = all(soyga_iterate(x, 6) == soyga_iterate(x, 12) for x in range(23))

@@ -1,6 +1,6 @@
 {
   "title": "U24 Spectral Operator: Verification Data and Analysis",
-  "description": "Complete verification data, analysis notebooks, and reproducibility scripts for two companion papers: 'A Spectral Operator for the Riemann Hypothesis' (v12.0) and 'The Universality Constant: Eleven Paths to Omega = 24' (v1.3). Includes 13 data files, 7 Jupyter notebooks, and figure-regeneration scripts. All analysis reproducible with standard scientific Python.",
+  "description": "Complete verification data, analysis notebooks, and reproducibility scripts for two companion papers: 'A Spectral Operator for the Riemann Hypothesis' (v12.0) and 'The Universality Constant: Eleven Paths to Omega = 24' (v1.3). Includes 20 data files across 8 subdirectories, 8 Jupyter notebooks, and figure-regeneration scripts. All analysis reproducible with standard scientific Python.",
   "creators": [
     {
       "name": "Daugherty, Bryan",

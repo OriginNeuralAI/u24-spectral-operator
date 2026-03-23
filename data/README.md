@@ -34,8 +34,8 @@ All data files needed to reproduce the analysis in both papers.
 
 | File | Format | Size | Description |
 |------|--------|------|-------------|
-| `odlyzko_1e21.npy` | NumPy | 80 KB | ~10,000 normalized spacings of Riemann zeros near height 10^21 (derived from Odlyzko's tables) |
-| `odlyzko_1e22.npy` | NumPy | 80 KB | ~10,000 normalized spacings of Riemann zeros near height 10^22 (derived from Odlyzko's tables) |
+| `odlyzko_1e21.npy` | NumPy | 80 KB | 10,000 unfolded zero positions near height 10^21 (derived from Odlyzko's tables). Consecutive differences give normalized spacings. |
+| `odlyzko_1e22.npy` | NumPy | 80 KB | 10,000 unfolded zero positions near height 10^22 (derived from Odlyzko's tables). Consecutive differences give normalized spacings. |
 
 ## spectral-unity/
 

@@ -25,12 +25,12 @@
 
 | Paper | Description | PDF | LaTeX |
 |-------|-------------|-----|-------|
-| **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Self-adjoint H&#x2083; on C&#xB2;&#xB3; &#x2297; L&#xB2;([0,2&#x3C0;]), 5M zeta zeros verified | [PDF](papers/spectral-operator/main.pdf) | [TeX](papers/spectral-operator/main.tex) |
+| **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Self-adjoint H<sub>D</sub> on C&#xB2;&#xB3; &#x2297; L&#xB2;([0,2&#x3C0;]), 5M zeta zeros verified | [PDF](papers/spectral-operator/main.pdf) | [TeX](papers/spectral-operator/main.tex) |
 | **The Universality Constant: Eleven Paths to &#x3A9; = 24** (v1.3) | Derives &#x3B1;&#x2091;&#x2098; &#x2248; 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [TeX](papers/universality-constant/main.tex) |
 
 ## Key Result
 
-We construct a self-adjoint operator **H&#x2083;** acting on **C&#xB2;&#xB3; &#x2297; L&#xB2;([0,2&#x3C0;])** whose spectral statistics reproduce Riemann zeta zero correlations to within &#x2016;R&#x2082; &#x2212; R&#x2082;&#x1D33;&#x1D41;&#x1D38;&#x2016;&#x2082; = **0.026**. The 23-dimensional internal space is fixed uniquely by requiring H&#x2082; = 0 for the spacing manifold (verified from N = 10&#xB3; to height ~10&#xB2;&#xB2;), recovering the Leech lattice &#x39B;&#x2082;&#x2084; and linking the operator's spectrum to Monster group moonshine. As a corollary, the universality constant **&#x3A9; = 24** determines the fine-structure constant &#x3B1;&#x2091;&#x2098; = 1/137.035999... with zero free parameters.
+We construct a self-adjoint operator **H<sub>D</sub>** acting on **C&#xB2;&#xB3; &#x2297; L&#xB2;([0,2&#x3C0;])** whose spectral statistics reproduce Riemann zeta zero correlations to within &#x2016;R&#x2082; &#x2212; R&#x2082;&#x1D33;&#x1D41;&#x1D38;&#x2016;&#x2082; = **0.026**. The 23-dimensional internal space is fixed uniquely by requiring H&#x2082; = 0 for the spacing manifold (verified from N = 10&#xB3; to height ~10&#xB2;&#xB2;), recovering the Leech lattice &#x39B;&#x2082;&#x2084; and linking the operator's spectrum to Monster group moonshine. As a corollary, the universality constant **&#x3A9; = 24** determines the fine-structure constant &#x3B1;&#x2091;&#x2098; = 1/137.035999... with zero free parameters.
 
 ## Transparency Statement
 
@@ -90,8 +90,8 @@ All data files are included in this repository. No external downloads required.
 | `rh_verification_certificate.json` | `data/rh-bridge/` | 1 | Isomorphic Engine bridge certificate |
 | `h2_scaling_verification.json` | `data/h2-topology/` | 7 scales | H&#x2082;=0 from N=10&#xB3; to height ~10&#xB2;&#xB2; |
 | `h2_extended_results.json` | `data/h2-topology/` | 7 scales | Vietoris-Rips persistent homology |
-| `odlyzko_1e21.npy` | `data/odlyzko/` | ~1,000 | Zeros near height 10&#xB2;&#xB9; |
-| `odlyzko_1e22.npy` | `data/odlyzko/` | ~1,000 | Zeros near height 10&#xB2;&#xB2; |
+| `odlyzko_1e21.npy` | `data/odlyzko/` | 10,000 | Unfolded zero positions near height 10&#xB2;&#xB9; |
+| `odlyzko_1e22.npy` | `data/odlyzko/` | 10,000 | Unfolded zero positions near height 10&#xB2;&#xB2; |
 | `experiment_results.json` | `data/spectral-unity/` | &mdash; | Full DSC-1 spectral unity dataset |
 | `lehmer_predictions.csv` | `data/spectral-unity/` | 28,160 | Monster resonance Lehmer pair predictions |
 | `moonshine_peaks.csv` | `data/spectral-unity/` | 15 | Monster primes + spectral peak data |
@@ -175,7 +175,7 @@ Papers, data, notebooks, and scripts are all freely available for reuse with att
 
 <div align="center">
 
-**&#x3A9; = 24** &nbsp;|&nbsp; **H&#x2083; = J&#x2297;I + I&#x2297;T + V&#x2095;&#x2096; + V&#x2098;** &nbsp;|&nbsp; **&#x3B1;&#x2091;&#x2098; = 1/137.03**
+**&#x3A9; = 24** &nbsp;|&nbsp; **H<sub>D</sub> = J&#x2297;I + I&#x2297;T + V<sub>HP</sub> + V<sub>Z</sub>** &nbsp;|&nbsp; **&#x3B1;&#x2091;&#x2098; = 1/137.03**
 
 *OriginNeuralAI &middot; 2026*
 
