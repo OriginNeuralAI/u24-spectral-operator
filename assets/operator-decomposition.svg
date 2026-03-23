@@ -1,0 +1,68 @@
+<svg width="800" height="500" viewBox="0 0 800 500" font-family="Georgia, serif">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="500" fill="#0A2540"/>
+
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" font-size="24px" fill="#FFFFFF" filter="url(#glow)">Operator Decomposition</text>
+
+  <!-- Box 1: J ⊗ I -->
+  <g filter="url(#glow)">
+    <rect x="30" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
+    <text x="100" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">J &#x2297; I</text>
+    <text x="100" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Coupling</text>
+    <text x="100" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">23&#xD7;23 Reeds matrix</text>
+  </g>
+
+  <!-- Plus 1 -->
+  <text x="185" y="225" text-anchor="middle" font-size="30px" fill="#D4AF37" filter="url(#glow)">+</text>
+
+  <!-- Box 2: I ⊗ T -->
+  <g filter="url(#glow)">
+    <rect x="230" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
+    <text x="300" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">I &#x2297; T</text>
+    <text x="300" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Kinetic</text>
+    <text x="300" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">&#x2212;d&#xB2;/d&#x03B8;&#xB2; on [0,2&#x03C0;]</text>
+  </g>
+
+  <!-- Plus 2 -->
+  <text x="385" y="225" text-anchor="middle" font-size="30px" fill="#D4AF37" filter="url(#glow)">+</text>
+
+  <!-- Box 3: V_HP -->
+  <g filter="url(#glow)">
+    <rect x="430" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
+    <text x="500" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">V_HP</text>
+    <text x="500" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Hardy&#x2013;P&#xF3;lya</text>
+    <text x="500" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">Conformal potential</text>
+  </g>
+
+  <!-- Plus 3 -->
+  <text x="585" y="225" text-anchor="middle" font-size="30px" fill="#D4AF37" filter="url(#glow)">+</text>
+
+  <!-- Box 4: V_Z -->
+  <g filter="url(#glow)">
+    <rect x="630" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
+    <text x="700" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">V_Z</text>
+    <text x="700" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Zeta coupling</text>
+    <text x="700" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">log|&#x03B6;(&#x00BD;+it)| link</text>
+  </g>
+
+  <!-- Horizontal line -->
+  <line x1="30" y1="350" x2="770" y2="350" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Full Hilbert space text -->
+  <text x="400" y="380" text-anchor="middle" font-size="20px" fill="#FFFFFF" filter="url(#glow)">Full Hilbert space: C&#xB2;&#xB3; &#x2297; L&#xB2;([0,2&#x03C0;])</text>
+
+  <!-- Bottom parameters text -->
+  <text x="400" y="450" text-anchor="middle" font-size="14px" fill="#D4AF37" filter="url(#glow)">&#x03BB;_max(J) = 5.5232  |  &#x03BA;(J) = 23,015,945  |  &#x03B1;_D = 0.008193</text>
+
+</svg>

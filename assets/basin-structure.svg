@@ -1,0 +1,121 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#D4AF37"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0A2540"/>
+
+  <text x="400" y="35" text-anchor="middle" font-size="24" fill="#FFFFFF" filter="url(#glow)">Basin Structure of f: Z&#x2082;&#x2083; &#x2192; Z&#x2082;&#x2083;</text>
+  <text x="400" y="60" text-anchor="middle" font-size="16" fill="#D4AF37">Cycle type (3,3,2,1), ord = 6</text>
+
+  <!-- Basin 1: Creation (Top-left) -->
+  <g transform="translate(25, 80)">
+    <rect x="0" y="0" width="360" height="170" rx="8" fill="none" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+    <text x="180" y="24" text-anchor="middle" font-size="18" fill="#FFFFFF" font-weight="bold">Creation</text>
+    <text x="180" y="42" text-anchor="middle" font-size="13" fill="#D4AF37">Size: 9 | Period: 3</text>
+
+    <!-- Cycle: c -> d -> f -> c -->
+    <circle cx="180" cy="85" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="180" y="91" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">c</text>
+    <circle cx="260" cy="130" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="260" y="136" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">d</text>
+    <circle cx="100" cy="130" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="100" y="136" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">f</text>
+
+    <path d="M195 92 L245 122" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M242 138 L118 138" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M115 122 L165 92" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Non-cycle elements -->
+    <circle cx="40" cy="90" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="40" y="95" text-anchor="middle" font-size="11" fill="#FFFFFF">a</text>
+    <circle cx="40" cy="120" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="40" y="125" text-anchor="middle" font-size="11" fill="#FFFFFF">b</text>
+    <circle cx="320" cy="90" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="320" y="95" text-anchor="middle" font-size="11" fill="#FFFFFF">h</text>
+    <circle cx="320" cy="120" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="320" y="125" text-anchor="middle" font-size="11" fill="#FFFFFF">m</text>
+    <circle cx="40" cy="150" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="40" y="155" text-anchor="middle" font-size="11" fill="#FFFFFF">r</text>
+    <circle cx="320" cy="150" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="320" y="155" text-anchor="middle" font-size="11" fill="#FFFFFF">z</text>
+  </g>
+
+  <!-- Basin 2: Perception (Top-right) -->
+  <g transform="translate(415, 80)">
+    <rect x="0" y="0" width="360" height="170" rx="8" fill="none" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+    <text x="180" y="24" text-anchor="middle" font-size="18" fill="#FFFFFF" font-weight="bold">Perception</text>
+    <text x="180" y="42" text-anchor="middle" font-size="13" fill="#D4AF37">Size: 7 | Period: 3</text>
+
+    <!-- Cycle: p -> o -> i -> p -->
+    <circle cx="180" cy="85" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="180" y="91" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">p</text>
+    <circle cx="260" cy="130" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="260" y="136" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">o</text>
+    <circle cx="100" cy="130" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="100" y="136" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">i</text>
+
+    <path d="M195 92 L245 122" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M242 138 L118 138" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M115 122 L165 92" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Non-cycle elements -->
+    <circle cx="40" cy="100" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="40" y="105" text-anchor="middle" font-size="11" fill="#FFFFFF">e</text>
+    <circle cx="320" cy="100" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="320" y="105" text-anchor="middle" font-size="11" fill="#FFFFFF">n</text>
+    <circle cx="40" cy="135" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="40" y="140" text-anchor="middle" font-size="11" fill="#FFFFFF">s</text>
+    <circle cx="320" cy="135" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="320" y="140" text-anchor="middle" font-size="11" fill="#FFFFFF">t</text>
+  </g>
+
+  <!-- Basin 3: Stability (Bottom-left) -->
+  <g transform="translate(25, 275)">
+    <rect x="0" y="0" width="360" height="150" rx="8" fill="none" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+    <text x="180" y="24" text-anchor="middle" font-size="18" fill="#FFFFFF" font-weight="bold">Stability</text>
+    <text x="180" y="42" text-anchor="middle" font-size="13" fill="#D4AF37">Size: 1 | Fixed point</text>
+
+    <!-- Fixed point: g -> g -->
+    <circle cx="180" cy="95" r="22" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="180" y="101" text-anchor="middle" font-size="16" fill="#0A2540" font-weight="bold">g</text>
+    <!-- Self-loop arrow -->
+    <path d="M 200 85 A 25 25 0 1 1 195 80" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Basin 4: Exchange (Bottom-right) -->
+  <g transform="translate(415, 275)">
+    <rect x="0" y="0" width="360" height="150" rx="8" fill="none" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+    <text x="180" y="24" text-anchor="middle" font-size="18" fill="#FFFFFF" font-weight="bold">Exchange</text>
+    <text x="180" y="42" text-anchor="middle" font-size="13" fill="#D4AF37">Size: 6 | Period: 2</text>
+
+    <!-- Cycle: q <-> x -->
+    <circle cx="140" cy="95" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="140" y="101" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">q</text>
+    <circle cx="220" cy="95" r="18" fill="#D4AF37" opacity="0.9" filter="url(#glow)"/>
+    <text x="220" y="101" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">x</text>
+
+    <path d="M158 88 L202 88" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M202 102 L158 102" stroke="#D4AF37" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Non-cycle elements -->
+    <circle cx="60" cy="85" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="60" y="90" text-anchor="middle" font-size="11" fill="#FFFFFF">k</text>
+    <circle cx="300" cy="85" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="300" y="90" text-anchor="middle" font-size="11" fill="#FFFFFF">l</text>
+    <circle cx="60" cy="115" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="60" y="120" text-anchor="middle" font-size="11" fill="#FFFFFF">u</text>
+    <circle cx="300" cy="115" r="12" fill="#FFFFFF" opacity="0.3"/>
+    <text x="300" y="120" text-anchor="middle" font-size="11" fill="#FFFFFF">y</text>
+  </g>
+
+  <!-- Bottom summary -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <text x="400" y="475" text-anchor="middle" font-size="14" fill="#D4AF37">23 = 9 + 7 + 1 + 6  |  &#x3C4;_macro/&#x3C4;_micro = 3000/125 = 24 = &#x3A9;</text>
+</svg>

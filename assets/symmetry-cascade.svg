@@ -1,0 +1,80 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#D4AF37" filter="url(#glow)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0A2540"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-size="24" fill="#FFFFFF" filter="url(#glow)">Symmetry Cascade</text>
+
+  <!-- Node 1: M (Monster) -->
+  <rect x="310" y="80" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="105" text-anchor="middle" font-size="16" fill="#FFFFFF">M (Monster)</text>
+  <text x="500" y="105" text-anchor="start" font-size="14" fill="#FFFFFF">|M| = 8×10⁵³</text>
+
+  <!-- Arrow 1-2 -->
+  <line x1="400" y1="120" x2="400" y2="140" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+
+  <!-- Node 2: Co₁ -->
+  <rect x="310" y="140" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="165" text-anchor="middle" font-size="16" fill="#FFFFFF">Co₁</text>
+  <text x="500" y="165" text-anchor="start" font-size="14" fill="#FFFFFF">Leech automorphism</text>
+
+  <!-- Arrow 2-3 -->
+  <line x1="400" y1="180" x2="400" y2="200" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+
+  <!-- Node 3: Λ₂₄ -->
+  <rect x="310" y="200" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="225" text-anchor="middle" font-size="16" fill="#FFFFFF">Λ₂₄</text>
+  <text x="500" y="225" text-anchor="start" font-size="14" fill="#FFFFFF">Leech lattice, dim = 24</text>
+
+  <!-- Arrow 3-4 -->
+  <line x1="400" y1="240" x2="400" y2="260" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+
+  <!-- Badge between 3 and 4 -->
+  <rect x="420" y="240" width="80" height="20" rx="5" ry="5" fill="#D4AF37" fill-opacity="0.9" filter="url(#glow)"/>
+  <text x="460" y="255" text-anchor="middle" font-size="14" fill="#0A2540" font-weight="bold">Ω = 24</text>
+
+  <!-- Node 4: E₈ -->
+  <rect x="310" y="260" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="285" text-anchor="middle" font-size="16" fill="#FFFFFF">E₈</text>
+  <text x="500" y="285" text-anchor="start" font-size="14" fill="#FFFFFF">Exceptional Lie group</text>
+
+  <!-- Arrow 4-5 -->
+  <line x1="400" y1="300" x2="400" y2="320" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+
+  <!-- Node 5: SU(5) -->
+  <rect x="310" y="320" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="345" text-anchor="middle" font-size="16" fill="#FFFFFF">SU(5)</text>
+  <text x="500" y="345" text-anchor="start" font-size="14" fill="#FFFFFF">Georgi–Glashow GUT</text>
+
+  <!-- Arrow 5-6 -->
+  <line x1="400" y1="360" x2="400" y2="380" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+
+  <!-- Node 6: SM -->
+  <rect x="310" y="380" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="405" text-anchor="middle" font-size="16" fill="#FFFFFF">SM</text>
+  <text x="500" y="405" text-anchor="start" font-size="14" fill="#FFFFFF">SU(3)×SU(2)×U(1)</text>
+
+  <!-- Arrow 6-7 -->
+  <line x1="400" y1="420" x2="400" y2="440" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+
+  <!-- Node 7: U(1)_EM -->
+  <rect x="310" y="440" width="180" height="40" rx="10" ry="10" fill="#1A3550" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <text x="400" y="465" text-anchor="middle" font-size="16" fill="#FFFFFF">U(1)_EM</text>
+  <text x="500" y="465" text-anchor="start" font-size="14" fill="#D4AF37" filter="url(#glow)">α_EM ≈ 1/137.03</text>
+
+  <!-- Bottom Text -->
+  <text x="400" y="490" text-anchor="middle" font-size="14" fill="#FFFFFF">14/15 Monster primes detected in spectral data</text>
+</svg>
