@@ -296,13 +296,26 @@ proposed that the Hilbert--P\'olya operator should be a quantisation of
 the classical Hamiltonian $H=xp$, regularised to have discrete spectrum.
 Connes~\cite{connes1999} approached the problem through noncommutative
 geometry, while Sierra and Townsend~\cite{sierra-townsend2008} developed
-a Landau-level model.  Lapidus and van
-Frankenhuijsen~\cite{lapidus-vf2013} established deep connections between
-fractal strings, their geometric zeta functions, and the Riemann zeta
-function; Herichi and Lapidus~\cite{herichi-lapidus2019} subsequently proved
-that the Riemann Hypothesis is equivalent to the invertibility of a
+a Landau-level model.  In a parallel line of development,
+Lapidus and Maier~\cite{lapidus-maier1995} showed that the Riemann
+Hypothesis is equivalent to a precise inverse spectral problem for
+fractal strings, and Lapidus and van
+Frankenhuijsen~\cite{lapidus-vf2013} developed a comprehensive
+``complex dimensions'' framework in which the geometric zeta function of
+a fractal string $\zeta_{\mathcal{L}}(s)=\sum_j \ell_j^s$ connects to
+$\zeta(s)$ via an explicit formula---the distributional identity
+linking lengths to complex dimensions that is the fractal-string analogue
+of the Selberg/Guinand--Weil trace formula we extend in
+\cref{sec:trace-formula}.  Lapidus~\cite{lapidus2008} situated these
+connections within a broader programme linking fractal membranes,
+noncommutative geometry, and the zeta zeros.  Herichi and
+Lapidus~\cite{herichi-lapidus2019} then proved
+that RH is equivalent to the invertibility of a
 \emph{spectral operator} $\mathfrak{a}=\zeta(\partial)$ in every
-dimension $c\in(0,1)$ in the critical strip.
+dimension $c\in(0,1)$ in the critical strip---establishing that the
+zeros of $\zeta(s)$ are controlled by the spectrum of a concrete
+operator, a result whose spirit our construction realises through
+a different (combinatorial, quantum-graph) mechanism.
 Bender, Brody, and
 M\"uller~\cite{bender-brody-muller2017} constructed a
 $\mathcal{PT}$-symmetric operator, though its physical Hilbert space
@@ -1999,6 +2012,13 @@ inclusion.
 \subsubsection{Arithmetic Trace Formula}
 \label{sec:trace-formula}
 
+The trace formula below is the quantum-graph analogue of the
+distributional explicit formula for fractal strings
+(\cite{lapidus-maier1995,lapidus-vf2013}), in which the geometric side
+sums over \emph{lengths} (here: prime orbit lengths $\log p$) and the
+spectral side sums over \emph{complex dimensions} (here: eigenvalues of
+$H_D$).
+
 \begin{theorem}[Arithmetic Trace Formula for $H_D$]\label{thm:trace-formula}
 Let $h\in C_c^\infty(\R)$ with Paley--Wiener transform~$g$.  Then
 \begin{equation}\label{eq:trace-formula}
@@ -2112,7 +2132,11 @@ $p\leq 47$ because $V_Z$ encodes only these primes.
 \label{sec:obstruction}
 
 The spectral determinant $D(s)$ shares two properties with Riemann's
-completed zeta function $\xi(s)$:
+completed zeta function $\xi(s)$ (cf.\ the parallel between $D(s)$ and
+the geometric zeta function $\zeta_{\mathcal{L}}(s)$ of fractal strings,
+whose complex dimensions---poles of $\zeta_{\mathcal{L}}$---encode the
+zeros of $\zeta(s)$ via the Lapidus--van~Frankenhuijsen explicit
+formula~\cite{lapidus-vf2013}):
 \begin{enumerate}[nosep,label=(\roman*)]
   \item Both are entire of order~$1$.
   \item Both satisfy $f(s)=f(1-s)$.
