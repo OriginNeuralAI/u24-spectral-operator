@@ -38,8 +38,8 @@
 
 | Paper | Description | PDF | BSV | LaTeX |
 |-------|-------------|-----|-----|-------|
-| **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Self-adjoint H_D on C²³ ⊗ L₂([0,2π]), 5M zeta zeros verified | [PDF](papers/spectral-operator/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/94513c3aef41515874a477f0a4eeeef4365882ae22d77bcec25c356d3cfd6f2f/0) | [TeX](papers/spectral-operator/main.tex) |
-| **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/309a4630ef1597eba3cc366cc9b05b642de794568ae5643fbcda58d6d46d15aa/0) | [TeX](papers/universality-constant/main.tex) |
+| **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Self-adjoint H_D on C²³ ⊗ L₂([0,2π]), 5M zeta zeros verified | [PDF](papers/spectral-operator/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0) | [TeX](papers/spectral-operator/main.tex) |
+| **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | [TeX](papers/universality-constant/main.tex) |
 
 ## Key Result
 
@@ -229,8 +229,8 @@ Both papers are permanently anchored to the BSV blockchain via the SmartLedger I
 
 | Paper | BSV Transaction | SHA-256 |
 |-------|-----------------|---------|
-| A Spectral Operator for the Riemann Hypothesis | [`94513c3a...`](https://plugins.whatsonchain.com/api/plugin/main/94513c3aef41515874a477f0a4eeeef4365882ae22d77bcec25c356d3cfd6f2f/0) | `2e1e7776...1bbc28` |
-| The Universality Constant: Eleven Paths to Ω = 24 | [`309a4630...`](https://plugins.whatsonchain.com/api/plugin/main/309a4630ef1597eba3cc366cc9b05b642de794568ae5643fbcda58d6d46d15aa/0) | `e78189b2...a56e14` |
+| A Spectral Operator for the Riemann Hypothesis | [`d1e2303e...`](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0) | `2e1e7776...1bbc28` |
+| The Universality Constant: Eleven Paths to Ω = 24 | [`ef8801b3...`](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | `e78189b2...a56e14` |
 
 Registered by **SmartLedger Solutions** (CAGE: 10HF4, UEI: C5RUDT3WS844) on behalf of Bryan W. Daugherty, Gregory J. Ward, and Shawn M. Ryan.
 
