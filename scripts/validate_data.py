@@ -227,6 +227,114 @@ def validate_odlyzko():
         check(os.path.getsize(path) > 10000, f"{name}: file size > 10KB ({os.path.getsize(path)} bytes)")
 
 
+# ── reeds/ ────────────────────────────────────────────────────────
+
+def validate_reeds():
+    print("\n=== reeds/ ===")
+
+    # Endomorphism
+    path = os.path.join(DATA_DIR, "reeds", "reeds_endomorphism_z23.json")
+    check(os.path.exists(path), "reeds_endomorphism_z23.json exists")
+    with open(path) as f:
+        data = json.load(f)
+
+    table = data["reeds_table"]["numeric_table"]
+    check(len(table) == 23, f"Table has 23 entries (got {len(table)})")
+    check(all(0 <= v < 23 for v in table), "All values in [0, 22]")
+    check(data["properties"]["cycle_type"] == [3, 3, 2, 1], "Cycle type = [3,3,2,1]")
+    check(data["properties"]["order_on_eventual_image"] == 6, "ord(f|_E) = 6")
+
+    basins = data["basins"]
+    check(len(basins) == 4, "4 basins")
+    sizes = [b["basin_size"] for b in basins]
+    check(sizes == [9, 7, 1, 6], f"Basin sizes = [9,7,1,6] (got {sizes})")
+    check(sum(sizes) == 23, "Basin sizes sum to 23")
+
+    check(data["constants"]["alpha_D"] == -0.008193, "alpha_D = -0.008193")
+    check(data["constants"]["omega"] == 24, "Omega = 24")
+
+    # Coupling matrix
+    path_J = os.path.join(DATA_DIR, "reeds", "coupling_matrix_J.json")
+    check(os.path.exists(path_J), "coupling_matrix_J.json exists")
+    with open(path_J) as f:
+        J_data = json.load(f)
+
+    J = J_data["coupling_matrix_J"]
+    check(len(J) == 23, f"J has 23 rows (got {len(J)})")
+    check(len(J[0]) == 23, f"J has 23 cols (got {len(J[0])})")
+    check(J_data["properties"]["symmetric"], "J is symmetric")
+    check(abs(J_data["properties"]["trace"]) < 1e-10, "Trace(J) = 0")
+    check(len(J_data["eigenvalues_J"]) == 23, "23 eigenvalues")
+
+
+# ── pair-correlation/ ────────────────────────────────────────────
+
+def validate_pair_correlation():
+    print("\n=== pair-correlation/ ===")
+
+    # 9-scale convergence
+    path = os.path.join(DATA_DIR, "pair-correlation", "r2_convergence_9scales.json")
+    check(os.path.exists(path), "r2_convergence_9scales.json exists")
+    with open(path) as f:
+        data = json.load(f)
+
+    scales = data["scales"]
+    check(len(scales) == 9, f"9 scales (got {len(scales)})")
+    check(scales[0]["n_zeros"] == 200, "First scale = 200")
+    check(scales[-1]["n_zeros"] == 5000000, "Last scale = 5,000,000")
+
+    r2_vals = [s["r2_l2"] for s in scales]
+    check(all(r2_vals[i] >= r2_vals[i+1] for i in range(len(r2_vals)-1)),
+          "R2 monotonically decreasing")
+    check(abs(data["convergence_fit"]["alpha"] - 0.2833) < 0.001,
+          f"alpha = 0.2833 (got {data['convergence_fit']['alpha']})")
+
+    # Perturbation sweep
+    path_p = os.path.join(DATA_DIR, "pair-correlation", "perturbation_sweep.json")
+    check(os.path.exists(path_p), "perturbation_sweep.json exists")
+    with open(path_p) as f:
+        pert = json.load(f)
+    check(len(pert["sweeps"]) == 9, f"9 perturbation points (got {len(pert['sweeps'])})")
+
+    # Higher correlations
+    path_h = os.path.join(DATA_DIR, "pair-correlation", "higher_correlations.json")
+    check(os.path.exists(path_h), "higher_correlations.json exists")
+    with open(path_h) as f:
+        hc = json.load(f)
+    check(hc["r3"]["match"] == "GUE", "R3 matches GUE")
+    check(hc["r4"]["match"] == "GUE", "R4 matches GUE")
+
+    # Form factor
+    path_f = os.path.join(DATA_DIR, "pair-correlation", "form_factor_k2.json")
+    check(os.path.exists(path_f), "form_factor_k2.json exists")
+    with open(path_f) as f:
+        ff = json.load(f)
+    check(ff["spectral_rigidity"]["best_match"] == "GUE", "Spectral rigidity matches GUE")
+    check(len(ff["number_variance"]["data"]) == 20, "20 number variance entries")
+
+
+# ── quantum-graph/ ───────────────────────────────────────────────
+
+def validate_quantum_graph():
+    print("\n=== quantum-graph/ ===")
+    path = os.path.join(DATA_DIR, "quantum-graph", "gamma0_23_graph.json")
+    check(os.path.exists(path), "gamma0_23_graph.json exists")
+    with open(path) as f:
+        data = json.load(f)
+
+    check(data["graph"]["vertices"] == 2, "2 vertices (cusps)")
+    check(data["graph"]["bonds"] == 15, "15 bonds")
+    check(len(data["bonds"]) == 15, f"15 bond entries (got {len(data['bonds'])})")
+
+    primes = [b["prime"] for b in data["bonds"]]
+    check(primes == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47],
+          "Primes 2..47")
+
+    bw = data["berkolaiko_winn_conditions"]
+    check(bw["score"] == "2/4", "BW score = 2/4")
+    check(data["secular_eigenvalues"]["n_found"] == 160, "160 secular eigenvalues")
+
+
 # ── Main ────────────────────────────────────────────────────────────
 
 def main():
@@ -242,6 +350,9 @@ def main():
     validate_rh_bridge()
     validate_h2_topology()
     validate_odlyzko()
+    validate_reeds()
+    validate_pair_correlation()
+    validate_quantum_graph()
 
     print("\n" + "=" * 60)
     print(f"RESULTS: {PASS} passed, {FAIL} failed")

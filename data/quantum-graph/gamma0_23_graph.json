@@ -1,0 +1,64 @@
+{
+  "title": "Gamma_0(23) Quantum Graph",
+  "source": "Isomorphic Engine v0.12.0 (rh_unconditional_verification, Sections U1-U3)",
+  "description": "The Hecke congruence subgroup Gamma_0(23) defines a quantum graph with 2 cusps connected by 15 bonds (primes <= 47). Bond lengths are c * log(p).",
+
+  "graph": {
+    "vertices": 2,
+    "vertex_labels": ["cusp_infinity", "cusp_0"],
+    "bonds": 15,
+    "valences": [7, 8]
+  },
+
+  "bonds": [
+    {"id": 1,  "prime": 2,  "length": 0.693147, "from_cusp": 0, "to_cusp": 1},
+    {"id": 2,  "prime": 3,  "length": 1.098612, "from_cusp": 0, "to_cusp": 1},
+    {"id": 3,  "prime": 5,  "length": 1.609438, "from_cusp": 1, "to_cusp": 0},
+    {"id": 4,  "prime": 7,  "length": 1.945910, "from_cusp": 1, "to_cusp": 0},
+    {"id": 5,  "prime": 11, "length": 2.397895, "from_cusp": 1, "to_cusp": 0},
+    {"id": 6,  "prime": 13, "length": 2.564949, "from_cusp": 0, "to_cusp": 1},
+    {"id": 7,  "prime": 17, "length": 2.833213, "from_cusp": 1, "to_cusp": 0},
+    {"id": 8,  "prime": 19, "length": 2.944439, "from_cusp": 1, "to_cusp": 0},
+    {"id": 9,  "prime": 23, "length": 3.135494, "from_cusp": 1, "to_cusp": 0},
+    {"id": 10, "prime": 29, "length": 3.367296, "from_cusp": 0, "to_cusp": 1},
+    {"id": 11, "prime": 31, "length": 3.433987, "from_cusp": 0, "to_cusp": 1},
+    {"id": 12, "prime": 37, "length": 3.610918, "from_cusp": 1, "to_cusp": 0},
+    {"id": 13, "prime": 41, "length": 3.713572, "from_cusp": 0, "to_cusp": 1},
+    {"id": 14, "prime": 43, "length": 3.761200, "from_cusp": 1, "to_cusp": 0},
+    {"id": 15, "prime": 47, "length": 3.850148, "from_cusp": 0, "to_cusp": 1}
+  ],
+
+  "secular_eigenvalues": {
+    "n_found": 160,
+    "description": "Eigenvalues of the secular equation det(S(k) - I) = 0 for the quantum graph scattering matrix"
+  },
+
+  "zeta_zero_comparison": {
+    "n_zeta_zeros_compared": 50,
+    "matched_within_tolerance_1": 115,
+    "ks_distance": 0.753177,
+    "spacing_correlation": -0.118334,
+    "mean_nn_distance": 0.439832,
+    "note": "The high KS distance (0.753) at this scale indicates the quantum graph spectrum does not directly reproduce individual zeta zeros but shares statistical universality class."
+  },
+
+  "berkolaiko_winn_conditions": {
+    "description": "Four conditions for GUE spectral statistics on quantum graphs (Berkolaiko-Winn 2010)",
+    "score": "2/4",
+    "conditions": [
+      {"name": "Unitarity",         "gap": 0.000000, "status": "PASS"},
+      {"name": "Non-backscattering", "max_sigma_ee_sq": 0.562500, "status": "FAIL",
+       "detail": "Vertex 0: max_bs=0.510204 (valence 7), Vertex 1: max_bs=0.562500 (valence 8)"},
+      {"name": "Incommensurability", "min_ratio": 0.033609, "status": "PASS"},
+      {"name": "Time-reversal",      "asymmetry": 0.000000, "status": "FAIL",
+       "detail": "Symmetric (GOE), not broken (GUE requires broken T-symmetry)"}
+    ],
+    "note": "BW score 2/4 means the Gamma_0(23) graph alone does not produce GUE statistics. The coupling matrix J and the full operator H_D are needed to break time-reversal symmetry and achieve GUE."
+  },
+
+  "level_sweep": {
+    "description": "Gamma_0(N) for N=1..50, showing why N=23 is selected",
+    "selection_criterion": "psi(p) = p + 1 = 24 = Omega for p = 23 (supersingular prime)",
+    "note": "See data in level_sweep.txt for the full table"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Perturbation Sweep: R_2(r) and D_HP vs epsilon",
+  "source": "Isomorphic Engine v0.12.0 (rh_unconditional_verification, Section U5)",
+  "description": "Demonstrates that perturbations to the operator break GUE statistics while preserving U_24 structure. R_2 degrades above epsilon ~ 0.5.",
+  "base_n_zeros": 1000,
+
+  "sweeps": [
+    {"epsilon": 0.000, "r2_l2": 0.193973, "d_hp": 1.847253, "r2_ok": true,  "u24_ok": true},
+    {"epsilon": 0.010, "r2_l2": 0.190893, "d_hp": 1.854354, "r2_ok": true,  "u24_ok": true},
+    {"epsilon": 0.050, "r2_l2": 0.186646, "d_hp": 1.882669, "r2_ok": true,  "u24_ok": true},
+    {"epsilon": 0.100, "r2_l2": 0.156375, "d_hp": 1.917901, "r2_ok": true,  "u24_ok": true},
+    {"epsilon": 0.200, "r2_l2": 0.192510, "d_hp": 1.987432, "r2_ok": true,  "u24_ok": true},
+    {"epsilon": 0.500, "r2_l2": 0.509739, "d_hp": 2.190650, "r2_ok": false, "u24_ok": true},
+    {"epsilon": 1.000, "r2_l2": 1.220240, "d_hp": 2.512462, "r2_ok": false, "u24_ok": true},
+    {"epsilon": 2.000, "r2_l2": 0.691516, "d_hp": 3.063910, "r2_ok": false, "u24_ok": true},
+    {"epsilon": 5.000, "r2_l2": 0.412246, "d_hp": 4.166673, "r2_ok": true,  "u24_ok": true}
+  ],
+
+  "critical_epsilon": {
+    "r2": 0.491,
+    "d_hp": 102.4
+  }
+}

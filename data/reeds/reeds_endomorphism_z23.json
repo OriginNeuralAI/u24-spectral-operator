@@ -1,0 +1,109 @@
+{
+  "title": "Reeds Endomorphism f: Z_23 -> Z_23",
+  "source": "Jim Reeds (1998-2006), reverse-engineered from Bodley MS 908 (Book of Soyga)",
+  "description": "General endomorphism on Z_23 with cycle type (3,3,2,1) and 4 attractor basins. This is the lookup table that defines the Daugherty coupling matrix J.",
+
+  "alphabet": ["a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","x","y","z"],
+  "alphabet_note": "23 letters (Latin alphabet minus 'j' and 'w'), standard Soyga convention",
+
+  "reeds_table": {
+    "description": "f(x) for each letter, given as both letter and numeric index",
+    "letter_map": {
+      "a": "c", "b": "c", "c": "d", "d": "f", "e": "p", "f": "c",
+      "g": "g", "h": "f", "i": "p", "k": "q", "l": "x", "m": "z",
+      "n": "p", "o": "i", "p": "o", "q": "x", "r": "m", "s": "i",
+      "t": "i", "u": "q", "x": "q", "y": "q", "z": "c"
+    },
+    "numeric_table": [2, 2, 3, 5, 14, 2, 6, 5, 14, 15, 20, 22, 14, 8, 13, 20, 11, 8, 8, 15, 15, 15, 2],
+    "index_map": "Index 0=a, 1=b, 2=c, ..., 22=z (skipping j,w)"
+  },
+
+  "properties": {
+    "image_size": 11,
+    "is_surjective": false,
+    "is_injective": false,
+    "cycle_type": [3, 3, 2, 1],
+    "order_on_eventual_image": 6,
+    "order_formula": "lcm(3, 3, 2, 1) = 6"
+  },
+
+  "basins": [
+    {
+      "id": 0,
+      "name": "Creation",
+      "cycle": ["c", "d", "f"],
+      "cycle_numeric": [2, 3, 5],
+      "period": 3,
+      "basin_size": 9,
+      "basin_elements": ["a", "b", "c", "d", "f", "h", "m", "r", "z"],
+      "basin_elements_numeric": [0, 1, 2, 3, 5, 7, 11, 16, 22],
+      "cycle_product_mod23": 7,
+      "kramers_barrier": 125,
+      "s4_subgroup": "V4"
+    },
+    {
+      "id": 1,
+      "name": "Perception",
+      "cycle": ["p", "o", "i"],
+      "cycle_numeric": [14, 13, 8],
+      "period": 3,
+      "basin_size": 7,
+      "basin_elements": ["e", "i", "n", "o", "p", "s", "t"],
+      "basin_elements_numeric": [4, 8, 12, 13, 14, 17, 18],
+      "cycle_product_mod23": 7,
+      "kramers_barrier": 500,
+      "s4_subgroup": "A4"
+    },
+    {
+      "id": 2,
+      "name": "Stability",
+      "cycle": ["g"],
+      "cycle_numeric": [6],
+      "period": 1,
+      "basin_size": 1,
+      "basin_elements": ["g"],
+      "basin_elements_numeric": [6],
+      "kramers_barrier": null,
+      "s4_subgroup": "{e}"
+    },
+    {
+      "id": 3,
+      "name": "Exchange",
+      "cycle": ["q", "x"],
+      "cycle_numeric": [15, 20],
+      "period": 2,
+      "basin_size": 6,
+      "basin_elements": ["k", "l", "q", "u", "x", "y"],
+      "basin_elements_numeric": [9, 10, 15, 19, 20, 21],
+      "kramers_barrier": 3000,
+      "s4_subgroup": "S4"
+    }
+  ],
+
+  "partition": "23 = 9 + 7 + 1 + 6",
+
+  "coupling_construction": {
+    "description": "The 23x23 Daugherty coupling matrix J is built from f's functional graph",
+    "formula": "J_ij = scale * (A_ij + A_ji)/2 + 0.3 * basin_coupling + 0.2 * orbit_correlation",
+    "adjacency": "A[i][j] = 1 if f(i) = j, 0 otherwise (each row has exactly one 1)",
+    "basin_coupling": "+1 if same basin, -0.5 otherwise",
+    "orbit_correlation": "1 - (steps_to_convergence / max_steps) if orbits meet; +0.2 same basin / -0.3 different basin otherwise"
+  },
+
+  "constants": {
+    "alpha_D": -0.008193,
+    "alpha_D_description": "Fundamental coupling constant (measured from Isomorphic Engine eigenspectrum)",
+    "omega": 24,
+    "omega_formula": "|S4| = dim(Lambda_Leech) = c_Monster = 24",
+    "omega_div_ord_f": 4,
+    "omega_div_ord_f_formula": "24 / 6 = 4 = |V4| (Klein four-group)",
+    "tau_ratio": "tau_macro / tau_micro = 3000 / 125 = 24 = Omega",
+    "cycle_product_mod23": "Both 3-cycles have product 7 mod 23: (2*3*5 = 30 = 7 mod 23) and (14*13*8 = 1456 = 7 mod 23)"
+  },
+
+  "verification": {
+    "f6_equals_f12": "For all x in Z_23, f^6(x) = f^12(x) (confirming ord(f|_E) = 6)",
+    "adjacency_row_sums": "Each row of A sums to exactly 1",
+    "basin_coverage": "All 23 elements classified into exactly one of 4 basins"
+  }
+}

@@ -34,9 +34,13 @@ We construct a self-adjoint operator **H&#x2083;** acting on **C&#xB2;&#xB3; &#x
 
 ## Transparency Statement
 
-> **Large-scale verification** (5 million zeta zeros, high-height Odlyzko blocks, persistent homology at 7 scales) was performed using the proprietary **Isomorphic Engine**. The Engine itself is not released.
+> **What the Isomorphic Engine computed.** The proprietary Engine (Rust, v0.12.0) performed: (1) Riemann-Siegel zero-finding up to N = 5,000,000, (2) 9-scale pair correlation R&#x2082;(r) convergence table, (3) Gamma&#x2080;(23) quantum graph secular eigenvalues, (4) Li coefficient, Weil explicit formula, and Beurling-Nyman distance computations, (5) perturbation sweeps and form factor analysis. The Engine itself is not released.
 >
-> **Everything else is.** This repository contains all verification data, analysis notebooks, and figure-reproduction scripts needed to independently confirm every claim in both papers. All analysis runs on standard scientific Python (NumPy, SciPy, Matplotlib).
+> **What we release.** All numerical outputs from those computations are in `data/`. The 9-scale R&#x2082; convergence table (`data/pair-correlation/`), the Reeds endomorphism and coupling matrix J (`data/reeds/`), the quantum graph structure (`data/quantum-graph/`), and all zero datasets are provided as structured JSON. The script `scripts/reconstruct_J.py` rebuilds the 23&#xD7;23 coupling matrix from the Reeds table alone&#x2014;no Engine needed.
+>
+> **What you can verify independently.** Every claim about GUE statistics at N &#x2264; 2000 is reproducible using the provided `.npy` zero files and standard Python (NumPy, SciPy). The power-law convergence &#x3B1; = 0.2833 can be verified by fitting the 9-scale table. The coupling matrix eigenspectrum, basin structure, and &#x3A9; = 24 relationships are fully derivable from the Reeds table.
+>
+> **What requires trust.** The zero-finding at N > 2000 and the Odlyzko-height blocks rely on the Engine's Riemann-Siegel implementation. We provide the numerical outputs but cannot release the source code.
 
 ## Verification
 
@@ -62,9 +66,12 @@ u24-spectral-operator/
 │   ├── rh-bridge/               # Isomorphic Engine verification certificate
 │   ├── h2-topology/             # H2=0 persistent homology (7 scales)
 │   ├── odlyzko/                 # Odlyzko zeros near 10^21 and 10^22
-│   └── spectral-unity/          # DSC-1 dataset, Lehmer predictions, moonshine
-├── notebooks/                   # 7 Jupyter notebooks (guided analysis)
-├── scripts/                     # Validation + figure regeneration
+│   ├── spectral-unity/          # DSC-1 dataset, Lehmer predictions, moonshine
+│   ├── reeds/                   # Reeds endomorphism + coupling matrix J
+│   ├── pair-correlation/        # 9-scale R₂ convergence, perturbation, form factor
+│   └── quantum-graph/           # Gamma_0(23) quantum graph structure
+├── notebooks/                   # 8 Jupyter notebooks (guided analysis)
+├── scripts/                     # Validation, reconstruction, figure generation
 ├── figures/                     # Generated output
 └── assets/                      # Hero SVG
 ```
@@ -88,6 +95,13 @@ All data files are included in this repository. No external downloads required.
 | `experiment_results.json` | `data/spectral-unity/` | &mdash; | Full DSC-1 spectral unity dataset |
 | `lehmer_predictions.csv` | `data/spectral-unity/` | 28,160 | Monster resonance Lehmer pair predictions |
 | `moonshine_peaks.csv` | `data/spectral-unity/` | 15 | Monster primes + spectral peak data |
+| `reeds_endomorphism_z23.json` | `data/reeds/` | 23 | Reeds lookup table, basin structure, cycle data |
+| `coupling_matrix_J.json` | `data/reeds/` | 23&#xD7;23 | Reconstructed coupling matrix + eigenvalues |
+| `r2_convergence_9scales.json` | `data/pair-correlation/` | 9 scales | R&#x2082; L&#x2082; from N=200 to 5M, &#x3B1;=0.2833 |
+| `perturbation_sweep.json` | `data/pair-correlation/` | 9 | R&#x2082; and D&#x2095;&#x2096; vs perturbation &#x3B5; |
+| `higher_correlations.json` | `data/pair-correlation/` | &mdash; | R&#x2083;, R&#x2084;, cluster T&#x2083; vs GUE |
+| `form_factor_k2.json` | `data/pair-correlation/` | 20 | K&#x2082;(&#x3C4;), &#x3A3;&#xB2;(L), spectral rigidity |
+| `gamma0_23_graph.json` | `data/quantum-graph/` | 15 bonds | &#x393;&#x2080;(23) quantum graph structure |
 
 See [`data/README.md`](data/README.md) for the full data dictionary.
 
@@ -102,6 +116,7 @@ See [`data/README.md`](data/README.md) for the full data dictionary.
 | 05 | [Generate Predictions](notebooks/05_generate_predictions.ipynb) | Generate Lehmer pair predictions from formula |
 | 06 | [Eigenvalue Verification](notebooks/06_eigenvalue_verification.ipynb) | 200+1000 zero GUE comparison, KS tests |
 | 07 | [H&#x2082; Topology](notebooks/07_h2_topology.ipynb) | Persistent homology H&#x2082;=0 verification |
+| 08 | [Coupling Matrix](notebooks/08_coupling_matrix_and_alpha.ipynb) | Reconstruct J from Reeds table, eigenspectrum, &#x3B1;&#x2083; |
 
 ### Setup
 
@@ -122,6 +137,7 @@ jupyter notebook notebooks/
 ```bash
 python scripts/regenerate_figures.py   # Regenerate all figures from data
 python scripts/validate_data.py        # Run data integrity checks
+python scripts/reconstruct_J.py       # Rebuild coupling matrix from Reeds table
 ```
 
 ## Citation

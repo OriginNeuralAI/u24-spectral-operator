@@ -1,0 +1,53 @@
+{
+  "title": "Form Factor K_2(tau) and Spectral Rigidity Delta_3(L)",
+  "source": "Isomorphic Engine v0.12.0 (rh_unconditional_verification, Section U8)",
+  "description": "GUE form factor K_2(tau) measures the Fourier transform of R_2(r). The ramp-plateau transition is a hallmark of GUE universality.",
+  "n_zeros": 500,
+
+  "form_factor": {
+    "l2_from_gue": 1.664987,
+    "linf_from_gue": 4.476270,
+    "ramp_slope": 1.8971,
+    "ramp_slope_gue_expected": 1.0,
+    "plateau_value": 1.0103,
+    "plateau_gue_expected": 1.0,
+    "note": "Ramp slope deviates from GUE at N=500. Expected to improve at larger N (see 9-scale convergence table)."
+  },
+
+  "spectral_rigidity": {
+    "l2_from_gue": 0.309196,
+    "l2_from_poisson": 0.676899,
+    "best_match": "GUE"
+  },
+
+  "number_variance": {
+    "description": "Sigma^2(L) for L = 1..20 at N=500 zeros",
+    "data": [
+      {"L":  1, "sigma2_empirical": 0.312248, "sigma2_gue": 0.442042, "sigma2_poisson":  1.0, "status": "GUE"},
+      {"L":  2, "sigma2_empirical": 0.337021, "sigma2_gue": 0.582503, "sigma2_poisson":  2.0, "status": "GUE"},
+      {"L":  3, "sigma2_empirical": 0.313507, "sigma2_gue": 0.664668, "sigma2_poisson":  3.0, "status": "GUE"},
+      {"L":  4, "sigma2_empirical": 0.307071, "sigma2_gue": 0.722964, "sigma2_poisson":  4.0, "status": "GUE"},
+      {"L":  5, "sigma2_empirical": 0.276315, "sigma2_gue": 0.768183, "sigma2_poisson":  5.0, "status": "GUE"},
+      {"L":  6, "sigma2_empirical": 0.267748, "sigma2_gue": 0.805129, "sigma2_poisson":  6.0, "status": "GUE"},
+      {"L":  7, "sigma2_empirical": 0.266260, "sigma2_gue": 0.836366, "sigma2_poisson":  7.0, "status": "GUE"},
+      {"L":  8, "sigma2_empirical": 0.281055, "sigma2_gue": 0.863425, "sigma2_poisson":  8.0, "status": "GUE"},
+      {"L":  9, "sigma2_empirical": 0.316322, "sigma2_gue": 0.887293, "sigma2_poisson":  9.0, "status": "GUE"},
+      {"L": 10, "sigma2_empirical": 0.320031, "sigma2_gue": 0.908644, "sigma2_poisson": 10.0, "status": "GUE"},
+      {"L": 11, "sigma2_empirical": 0.286868, "sigma2_gue": 0.927958, "sigma2_poisson": 11.0, "status": "GUE"},
+      {"L": 12, "sigma2_empirical": 0.263851, "sigma2_gue": 0.945590, "sigma2_poisson": 12.0, "status": "GUE"},
+      {"L": 13, "sigma2_empirical": 0.273658, "sigma2_gue": 0.961810, "sigma2_poisson": 13.0, "status": "GUE"},
+      {"L": 14, "sigma2_empirical": 0.274223, "sigma2_gue": 0.976827, "sigma2_poisson": 14.0, "status": "GUE"},
+      {"L": 15, "sigma2_empirical": 0.296478, "sigma2_gue": 0.990808, "sigma2_poisson": 15.0, "status": "GUE"},
+      {"L": 16, "sigma2_empirical": 0.303303, "sigma2_gue": 1.003886, "sigma2_poisson": 16.0, "status": "GUE"},
+      {"L": 17, "sigma2_empirical": 0.285243, "sigma2_gue": 1.016172, "sigma2_poisson": 17.0, "status": "GUE"},
+      {"L": 18, "sigma2_empirical": 0.283757, "sigma2_gue": 1.027754, "sigma2_poisson": 18.0, "status": "GUE"},
+      {"L": 19, "sigma2_empirical": 0.277066, "sigma2_gue": 1.038711, "sigma2_poisson": 19.0, "status": "GUE"},
+      {"L": 20, "sigma2_empirical": 0.282854, "sigma2_gue": 1.049105, "sigma2_poisson": 20.0, "status": "GUE"}
+    ],
+    "sigma2_l2_from_gue": 2.7040,
+    "sigma2_l2_from_poisson": 52.4529,
+    "best_match": "GUE"
+  },
+
+  "time_sec": 0.003
+}

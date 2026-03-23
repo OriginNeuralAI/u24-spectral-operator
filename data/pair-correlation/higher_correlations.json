@@ -1,0 +1,25 @@
+{
+  "title": "Higher Correlations R_3, R_4 and Cluster Function T_3",
+  "source": "Isomorphic Engine v0.12.0 (rh_unconditional_verification, Section U7)",
+  "description": "Verification that higher-point correlations (R_3, R_4, T_3) match GUE predictions, not Poisson.",
+  "n_zeros": 500,
+
+  "r3": {
+    "l2_from_gue": 0.551906,
+    "match": "GUE"
+  },
+
+  "r4": {
+    "l2_from_gue": 0.293768,
+    "mean_abs_dev": 0.145931,
+    "match": "GUE"
+  },
+
+  "cluster_t3": {
+    "mean_abs_t3": 0.461574,
+    "nonzero": true,
+    "note": "GUE predicts nonzero T_3, Poisson predicts zero. Nonzero value confirms GUE."
+  },
+
+  "time_sec": 0.035
+}

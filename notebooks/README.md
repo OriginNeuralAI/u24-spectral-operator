@@ -1,6 +1,6 @@
 # Notebooks
 
-Seven Jupyter notebooks providing a guided analysis of the verification data.
+Eight Jupyter notebooks providing a guided analysis of the verification data.
 
 > *Large-N results were generated with the proprietary Isomorphic Engine; these notebooks reproduce the analysis and figures from the released data.*
 
@@ -32,6 +32,7 @@ jupyter notebook
 | 05 | `05_generate_predictions.ipynb` | Generate the 28,160 Lehmer pair predictions |
 | 06 | `06_eigenvalue_verification.ipynb` | 200-zero KS test + 1000-zero GPU comparison vs GUE |
 | 07 | `07_h2_topology.ipynb` | Persistent homology: H_2 = 0 at all scales |
+| 08 | `08_coupling_matrix_and_alpha.ipynb` | Reconstruct coupling matrix J from Reeds table, eigenspectrum analysis |
 
 ## Dependencies
 
