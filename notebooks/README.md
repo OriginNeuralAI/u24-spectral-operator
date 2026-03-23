@@ -36,7 +36,7 @@ jupyter notebook
 
 ## Dependencies
 
-- Python 3.11+
+- Python 3.10+
 - NumPy >= 1.21
 - Matplotlib >= 3.5
 - SciPy >= 1.7

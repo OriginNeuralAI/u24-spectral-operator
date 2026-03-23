@@ -7,7 +7,8 @@
     "ad_statistic": 2.295,
     "spearman_rho": 1.0,
     "matches_2sigma": 31,
-    "match_percent": 91.2
+    "match_percent": 91.2,
+    "note": "Statistics computed over all 200 zeros. The table below shows a representative 35-row sample (k=1..35). match_percent = 91.2% and matches_2sigma = 31 refer to the 35 displayed rows. spearman_rho = 1.0 reflects that both zeta-zero and GUE sequences are index-matched (k=1..200), so rank correlation is trivially 1."
   },
   "table": [
     {

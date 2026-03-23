@@ -10,12 +10,12 @@
 
   <!-- Title -->
   <text x="400" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#FFFFFF" font-weight="bold">Verification Pipeline</text>
-  <text x="400" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#D4AF37">133/133 checks pass</text>
+  <text x="400" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#D4AF37">140/140 checks pass</text>
 
   <!-- Column 1: Structural -->
   <rect x="20" y="100" width="170" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
   <text x="105" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#FFFFFF" font-weight="bold">Structural</text>
-  <text x="35" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">46 checks</text>
+  <text x="35" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">50 checks</text>
   <line x1="35" y1="165" x2="175" y2="165" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
   <text x="35" y="188" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Self-adjointness</text>
   <text x="35" y="210" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Domain density</text>
@@ -29,7 +29,7 @@
   <!-- Column 2: RH Bridge -->
   <rect x="230" y="100" width="170" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
   <text x="315" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#FFFFFF" font-weight="bold">RH Bridge</text>
-  <text x="245" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">26 checks</text>
+  <text x="245" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">25 checks</text>
   <line x1="245" y1="165" x2="385" y2="165" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
   <text x="245" y="188" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Engine certificate</text>
   <text x="245" y="210" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Zero matching</text>
@@ -43,7 +43,7 @@
   <!-- Column 3: GUE Form Factor -->
   <rect x="440" y="100" width="170" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
   <text x="525" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#FFFFFF" font-weight="bold">GUE Form Factor</text>
-  <text x="455" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">46 checks</text>
+  <text x="455" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">35 checks</text>
   <line x1="455" y1="165" x2="595" y2="165" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
   <text x="455" y="188" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; R&#x2082;(r) convergence</text>
   <text x="455" y="210" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Level spacing</text>
@@ -58,7 +58,7 @@
   <rect x="650" y="100" width="130" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
   <text x="715" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#FFFFFF" font-weight="bold">Spectral</text>
   <text x="715" y="147" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#FFFFFF" font-weight="bold">Inclusion</text>
-  <text x="660" y="170" font-family="Georgia, serif" font-size="15" fill="#D4AF37">15 checks</text>
+  <text x="660" y="170" font-family="Georgia, serif" font-size="15" fill="#D4AF37">30 checks</text>
   <line x1="660" y1="178" x2="770" y2="178" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
   <text x="660" y="200" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Monster primes</text>
   <text x="660" y="222" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; 14/15 detected</text>
@@ -70,7 +70,7 @@
 
   <!-- Result box -->
   <rect x="220" y="355" width="360" height="55" rx="8" fill="#112840" stroke="#D4AF37" stroke-width="2"/>
-  <text x="400" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#FFFFFF" font-weight="bold">ALL PASS: 133/133</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#FFFFFF" font-weight="bold">ALL PASS: 140/140</text>
 
   <!-- Bottom -->
   <text x="400" y="450" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#D4AF37">R&#x2082; L&#x2082; = 0.026 at N = 5M  |  &#x3B1; = 0.2833  |  H&#x2082; = 0 at 7 scales</text>

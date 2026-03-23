@@ -15,7 +15,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.XXXXXXX-blue.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
 [![Data: Open](https://img.shields.io/badge/Data-Open-brightgreen.svg)](#data)
-[![Verification](https://img.shields.io/badge/Verification-133%2F133_checks-D4AF37.svg)](#verification-dashboard)
+[![Verification](https://img.shields.io/badge/Verification-140%2F140_checks-D4AF37.svg)](#verification-dashboard)
 [![Reproducible](https://img.shields.io/badge/Reproducible-with_public_tools-blue.svg)](#notebooks)
 [![BSV Anchored](https://img.shields.io/badge/BSV-On--Chain_Anchored-E8B125.svg)](#on-chain-anchoring)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
@@ -28,7 +28,7 @@
 >
 > ‖R₂ − R₂^GUE‖₂ = **0.026**
 >
-> **133/133** automated checks pass
+> **140/140** automated checks pass
 >
 > Universality constant **Ω = 24**
 >
@@ -51,17 +51,17 @@ We construct a self-adjoint operator **H_D** acting on **C²³ ⊗ L₂([0,2π])
 
 ## Verification Dashboard
 
-**133 / 133** automated checks pass across four categories:
+**140 / 140** automated checks pass across four categories:
 
 | Category | Checks | Status | Description |
 |----------|--------|--------|-------------|
-| Structural | 46 | ✓ | Operator self-adjointness, domain density, spectral resolution |
-| RH Bridge | 26 | ✓ | Isomorphic Engine certificate validation, zero matching |
-| GUE Form Factor | 46 | ✓ | Pair correlation R₂(r), level spacing, KS tests |
-| Spectral Inclusion | 15 | ✓ | Monster prime peaks detected in spectral data (**14/15** detected) |
+| Structural | 50 | ✓ | Data format, schema validation, ordering, mathematical consistency |
+| RH Bridge | 25 | ✓ | Isomorphic Engine certificate, convergence, perturbation checks |
+| GUE Form Factor | 35 | ✓ | Pair correlation R₂(r), level spacing, KS tests, form factor, number variance |
+| Spectral Inclusion | 30 | ✓ | Monster primes, quantum graph structure, Reeds basin/cycle, H₂ topology |
 
 <div align="center">
-<img src="assets/verification-pipeline.svg" alt="Verification pipeline: 133/133 checks pass" width="720"/>
+<img src="assets/verification-pipeline.svg" alt="Verification pipeline: 140/140 checks pass" width="720"/>
 </div>
 
 <details>
@@ -89,7 +89,7 @@ The L₂ norm of the difference between the observed R₂(r) and the GUE predict
 >
 > **What we release.** All numerical outputs from those computations are in `data/`. The 9-scale R₂ convergence table (`data/pair-correlation/`), the Reeds endomorphism and coupling matrix J (`data/reeds/`), the quantum graph structure (`data/quantum-graph/`), and all zero datasets are provided as structured JSON. The script `scripts/reconstruct_J.py` rebuilds the **23×23** coupling matrix from the Reeds table alone—no Engine needed.
 >
-> **What you can verify independently.** Every claim about GUE statistics at N ≤ **2000** is reproducible using the provided `.npy` zero files and standard Python (NumPy, SciPy). The power-law convergence α = **0.2833** can be verified by fitting the 9-scale table. The coupling matrix eigenspectrum (λ_max = **5.5232**, κ = **23,015,945**), basin structure ([**9, 7, 1, 6**] → Creation/Perception/Stability/Exchange), and **Ω = 24** relationships are fully derivable from the Reeds table.
+> **What you can verify independently.** Every claim about GUE statistics at N ≤ **2000** is reproducible using the provided `.npy` zero files and standard Python (NumPy, SciPy). The power-law convergence α = **0.2833** can be verified by fitting the 9-scale table. The coupling matrix J eigenspectrum (λ_max = **5.5232**), basin structure ([**9, 7, 1, 6**] → Creation/Perception/Stability/Exchange), and **Ω = 24** relationships are fully derivable from the Reeds table. The condition number κ = **23,015,945** refers to the full operator H_D (not J alone) as reported by the Isomorphic Engine.
 >
 > **What requires trust.** The zero-finding at N > **2000** and the Odlyzko-height blocks rely on the Engine's Riemann-Siegel implementation. We provide the numerical outputs but cannot release the source code.
 
@@ -194,7 +194,7 @@ This repository provides comprehensive data and analysis to independently verify
 
 *   **GUE Statistics:** Reproduce pair correlation R₂(r) and level spacing statistics for N ≤ **2000** Riemann zeros using provided `.npy` files and standard Python libraries.
 *   **Convergence:** Verify the power-law convergence α = **0.2833** (95% CI: [**0.28**, **0.29**]) by fitting the 9-scale ‖R₂ − R₂^GUE‖₂ table.
-*   **Coupling Matrix J:** Reconstruct the **23×23** coupling matrix J from the `reeds_endomorphism_z23.json` file. Verify its eigenspectrum (λ_max = **5.5232**, κ = **23,015,945**), basin structure ([**9, 7, 1, 6**] for Creation/Perception/Stability/Exchange), and cycle type ((**3,3,2,1**), ord = **6**).
+*   **Coupling Matrix J:** Reconstruct the **23×23** coupling matrix J from the `reeds_endomorphism_z23.json` file. Verify its eigenspectrum (λ_max = **5.5232**), basin structure ([**9, 7, 1, 6**] for Creation/Perception/Stability/Exchange), and cycle type ((**3,3,2,1**), ord = **6**). The condition number κ = **23,015,945** applies to the full H_D operator (Engine-reported).
 *   **α_D Constant:** Confirm the derivation of α_D = **0.008193** from the J matrix properties.
 *   **Universality Constant Ω:** Verify the derivation of **Ω = 24** through **11 independent paths** as detailed in the "Universality Constant" paper.
 *   **Monster Prime Detection:** Confirm the detection of **14/15** Monster primes in the spectral data.
@@ -244,7 +244,7 @@ If you use this data or analysis, please cite:
   author  = {Daugherty, Bryan and Ward, Gregory and Ryan, Shawn},
   year    = {2026},
   month   = {March},
-  note    = {v12.0, 133/133 automated verification checks}
+  note    = {v12.0, 140/140 automated verification checks}
 }
 
 @article{daugherty2026universality,

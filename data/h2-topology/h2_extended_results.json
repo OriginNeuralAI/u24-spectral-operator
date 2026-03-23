@@ -68,8 +68,5 @@
     "max_h2_lifetime": 0.098,
     "interpretation": "Spacing manifold exhibits H2=0 at all scales, confirming 1D structure (geodesics) on 2D surface"
   },
-  "figures": [
-    "h2_verification_figure.png",
-    "h2_verification_figure.pdf"
-  ]
+  "figures_note": "Figures can be regenerated via: python scripts/regenerate_figures.py"
 }

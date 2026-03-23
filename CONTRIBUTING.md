@@ -32,7 +32,7 @@ To verify the integrity and consistency of the data and key computational steps,
 python scripts/validate_data.py
 ```
 
-This script executes 133 automated checks across four categories, covering data format, consistency, mathematical properties, and cross-referencing between data files. Successful execution indicates that the repository's core data aligns with expected properties.
+This script executes 140 automated checks across four categories, covering data format, consistency, mathematical properties, and cross-referencing between data files. Successful execution indicates that the repository's core data aligns with expected properties.
 
 ## Reproducing Figures
 
@@ -57,7 +57,7 @@ To run these notebooks, ensure your environment is set up (see "Environment Setu
 
 ## Adding Verification Checks
 
-The existing suite of 133 automated checks is a cornerstone of this repository's reliability. We encourage contributions that extend this suite. To add new verification checks:
+The existing suite of 140 automated checks is a cornerstone of this repository's reliability. We encourage contributions that extend this suite. To add new verification checks:
 
 1.  Examine `scripts/validate_data.py` to understand the existing structure and check categories.
 2.  Implement your new check as a function within `validate_data.py` or a new module it imports.
@@ -66,7 +66,7 @@ The existing suite of 133 automated checks is a cornerstone of this repository's
 
 ## Data Integrity
 
-The `data/` directory contains approximately 20 data files (JSON, NPY, CSV) that are foundational to this research. These files are provided with SHA-256 checksums for integrity verification. **It is critical that files within the `data/` directory are NOT manually modified.**
+The `data/` directory contains approximately 20 data files (JSON, NPY, CSV) that are foundational to this research. SHA-256 checksums for all data files are provided in `data/checksums.sha256` for integrity verification. **It is critical that files within the `data/` directory are NOT manually modified.**
 
 If you need to regenerate specific data (e.g., the coupling matrix J), use the provided scripts like `scripts/reconstruct_J.py`. Any regenerated data should be verified against the original checksums or clearly documented if a deviation is intentional and justified.
 
