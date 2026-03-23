@@ -51,7 +51,7 @@
   linkcolor=accentlight,
   citecolor=accentlight,
   urlcolor=accentlight,
-  pdftitle={Computational Lower Bounds for R(5,5): A Constructive Proof
+  pdftitle={A Computational Lower Bound for R(5,5): A Constructive Proof
     via GPU-Accelerated Combinatorial Optimization},
   pdfauthor={Bryan Daugherty, Gregory Ward, Shawn Ryan},
   pdfsubject={Ramsey Theory, Combinatorial Optimization, GPU Computing},
@@ -152,7 +152,7 @@
 
 \begin{center}
   {\fontsize{22}{26}\selectfont\bfseries\color{accent}
-   Computational Lower Bounds for $R(5,5)$}\\[6pt]
+   A Computational Lower Bound for $R(5,5)$}\\[6pt]
   {\fontsize{16}{20}\selectfont\bfseries\color{accent}
    A Constructive Proof via\\[2pt]
    GPU-Accelerated Combinatorial Optimization}\\[14pt]
@@ -168,7 +168,7 @@
     \texttt{shawn@smartledger.solutions}}\\[16pt]
   {\normalsize\color{subtlegray} March 2026}\\[6pt]
   {\small\color{subtlegray}\itshape v1.0\enspace---\enspace
-    Exhaustive Verification at 962{,}598 Five-Cliques}
+    Exhaustive Verification at 850{,}668 Five-Cliques}
 \end{center}
 
 \vspace{14pt}
@@ -303,7 +303,7 @@ NVIDIA GeForce RTX 5070~Ti.
 \subsection{Ramsey Numbers and Graph Coloring}
 
 \begin{definition}
-The \emph{Ramsey number} $R(s,t)$ is the minimum $n \in \N$ such
+The \emph{Ramsey number} $R(s,t)$ is the smallest $n \in \N$ such
 that every two-coloring $\chi: E(K_n) \to \{-1, +1\}$ of the edges
 of the complete graph $K_n$ contains either a monochromatic $K_s$
 in color $+1$ or a monochromatic $K_t$ in color $-1$.
@@ -472,7 +472,8 @@ basin $d$ assigns
   \end{cases}
 \]
 where $\abs{i-j} \bmod p$ is reduced to $[0, p/2]$ by the
-symmetry $x \equiv p - x$.
+symmetry $x \equiv p - x$, ensuring the coloring depends only on
+the unordered pair $\{i,j\}$ and not on orientation.
 \end{definition}
 
 \subsection{Seed Sweep Protocol}
@@ -517,9 +518,13 @@ richer algebraic landscape.
 \legend{Paley, Cycle-type}
 \end{axis}
 \end{tikzpicture}
-\caption{Raw violation counts on $K_{43}$ ($k=5$). The Paley
-  construction produces 1{,}380 violations; the best cycle-type
-  seed from $\GF(43)$ achieves only 10 --- a $138\times$ improvement.}
+\caption{Raw violation counts on $K_{43}$ ($k=5$) after greedy
+  descent only (no ILS). The Paley construction produces 1{,}380
+  violations. Cycle-type seeds are shown for the best $(b,c,d)$
+  triple from each Galois field: $\GF(43)$ achieves 10, $\GF(43)$
+  with different parameters gives 87, $\GF(83)$ gives 110, and
+  $\GF(73)$ gives 197. All cycle-type seeds undergo the same greedy
+  descent procedure before counting.}
 \label{fig:paley-vs-cycletype}
 \end{figure}
 
@@ -535,9 +540,17 @@ $\chi: E(K_{42}) \to \{-1, +1\}$ with no monochromatic $K_5$.
 \end{theorem}
 
 \begin{proof}
-We exhibit the coloring stored in the certificate file
-\texttt{ramsey\_checkpoint\_K42.json}. The coloring was discovered
-by the following pipeline:
+We exhibit the coloring $\chi$ stored in the certificate file
+\texttt{ramsey\_checkpoint\_K42.json} (861 edge values in
+$\{-1,+1\}$). An independent brute-force verification iterates
+over all $\binom{42}{5} = 850{,}668$ five-cliques and confirms
+that for every 5-element subset $S \subseteq [42]$, the sum
+$\sum_{e \in E(K_S)} \chi(e)$ satisfies $|\text{sum}| < 10$.
+That is, no five-clique is monochromatic.
+\end{proof}
+
+\begin{remark}[Discovery pipeline]
+The certificate was found by the following computational pipeline:
 \begin{enumerate}[leftmargin=2em]
   \item \textbf{Seed.} Galois field sweep over $\GF(43)$:
     $f(x) = x^2 + 2x + 11$, dominant basin 1.
@@ -552,11 +565,7 @@ by the following pipeline:
     $\mathbb{Z}_2$ complement kicks every 15 rounds.
     Result: \textbf{0 violations}.
 \end{enumerate}
-Verification: an independent brute-force check iterates over all
-$\binom{42}{5} = 850{,}668$ five-cliques and confirms that no
-subset of five vertices has all $\binom{5}{2} = 10$ edges in the
-same color.
-\end{proof}
+\end{remark}
 
 \begin{remark}
 The coloring has 861 edges with color balance 453 red / 450 blue
@@ -742,10 +751,13 @@ Since $f_{\text{improving}} = 0$, no single edge flip reduces $V$.
 
 \begin{remark}
 The zero improving fraction means that all SA/ILS methods must
-overcome an energy barrier to escape this configuration. The
-barrier height (minimum number of simultaneous flips required to
-reach a lower-violation state) is at least 2, as confirmed by
-extensive multi-flip perturbation experiments.
+overcome an energy barrier to escape this configuration. Extensive
+multi-flip perturbation experiments (flipping 1--3 edges of the
+violating cliques, 100 trials; flipping all 42 edges incident to
+each violating vertex; vertex-pair and vertex-triple destructions)
+all returned to 2 violations after greedy descent, suggesting
+experimentally that the barrier width is at least 2 simultaneous
+flips.
 \end{remark}
 
 \subsection{Result 3: Failure of the Paley Construction at $K_{43}$}
@@ -820,11 +832,17 @@ simultaneously using wgpu compute shaders (Vulkan backend on RTX 5070 Ti):
 \subsection{Critical-Temperature-Centered Annealing}
 
 The annealing schedule concentrates computational budget near the
-\emph{critical temperature} $T_c$, estimated as
+\emph{critical temperature} $T_c$, calibrated empirically from
+the spectral analysis framework of the DSC-3 engine~\cite{daugherty2026spectral}
+as
 \[
   T_c \approx \frac{904.6}{N_{\text{edges}}} \approx 1.002
   \quad \text{for } K_{43}.
 \]
+The constant 904.6 arises from the engine's stagnation-detection
+calibration across problem classes; for Ramsey instances near
+$N_{\text{edges}} \approx 900$, this places $T_c$ in the region of
+maximum landscape sensitivity.
 
 % ── Temperature schedule diagram ──
 \begin{figure}[H]
@@ -915,17 +933,17 @@ GPU + CPU computation across three attack campaigns.
   xlabel={Computation time (seconds)},
   xlabel style={font=\small},
   symbolic y coords={
-    {Large-block crossover},
-    {GPU ILS (solve\_ils)},
-    {Wider prime sweep},
-    {Ising router (12 solvers)},
-    {Vertex destruction},
-    {Pop. crossover (50 gen)},
-    {Targeted perturbation},
-    {$\mathbb{Z}_2$ complement},
-    {Temp. ladder (8 $T_c$)},
-    {CPU ILS ultra (20$\times$500)},
-    {GPU SA (50 $T_c$ sweeps)}
+    Large-block crossover,
+    GPU ILS solve-ils,
+    Wider prime sweep,
+    Ising router 12-solver,
+    Vertex destruction,
+    Pop crossover 50gen,
+    Targeted perturbation,
+    Z2 complement,
+    Temp ladder 8-Tc,
+    CPU ILS ultra 20x500,
+    GPU SA 50-Tc sweeps
   },
   ytick=data,
   y tick label style={font=\footnotesize},
@@ -938,17 +956,17 @@ GPU + CPU computation across three attack campaigns.
   every axis plot/.append style={fill opacity=0.8},
 ]
 \addplot[fill=accent!50, draw=accent] coordinates {
-  (2593, {GPU SA (50 $T_c$ sweeps)})
-  (12931, {CPU ILS ultra (20$\times$500)})
-  (2300, {Temp. ladder (8 $T_c$)})
-  (3787, {$\mathbb{Z}_2$ complement})
-  (12314, {Targeted perturbation})
-  (12150, {Pop. crossover (50 gen)})
-  (527, {Vertex destruction})
-  (29, {Ising router (12 solvers)})
-  (4752, {Wider prime sweep})
-  (8515, {GPU ILS (solve\_ils)})
-  (30330, {Large-block crossover})
+  (2593, GPU SA 50-Tc sweeps)
+  (12931, CPU ILS ultra 20x500)
+  (2300, Temp ladder 8-Tc)
+  (3787, Z2 complement)
+  (12314, Targeted perturbation)
+  (12150, Pop crossover 50gen)
+  (527, Vertex destruction)
+  (29, Ising router 12-solver)
+  (4752, Wider prime sweep)
+  (8515, GPU ILS solve-ils)
+  (30330, Large-block crossover)
 };
 \end{axis}
 \end{tikzpicture}
@@ -975,9 +993,19 @@ two-violation coloring sits in an exceptionally deep basin:
 
 \subsection{Cross-Prime Universality of the Floor}
 
-The two-violation floor is not an artifact of $\GF(43)$ seeding.
-Independent cycle-type seeds from $\GF(83)$ ($b=40$, $c=48$, $d=1$,
-raw violations $= 110$) also converge to two violations after ILS.
+\begin{proposition}[Cross-Prime Universality]\label{prop:cross-prime}
+The two-violation floor on $K_{43}$ is not an artifact of $\GF(43)$
+seeding. Independent cycle-type seeds from $\GF(83)$ ($b=40$, $c=48$,
+$d=1$, raw violations $= 110$) also converge to exactly two
+violations after ILS, as do seeds from $\GF(43)$ with different
+$(b,c)$ parameters. In total, seeds from 13 distinct Galois fields
+were tested; every seed that reached $V \leq 10$ after greedy
+descent converged to $V = 2$ after ILS.
+\end{proposition}
+
+This cross-prime convergence is arguably the strongest evidence that
+the two-violation floor is a graph-theoretic invariant of $K_{43}$
+rather than an artifact of any particular algebraic construction.
 
 % ── Prime sweep results ──
 \begin{figure}[H]
@@ -1027,7 +1055,8 @@ cliques:
 Both share the pattern of two $K_5$ with four common vertices.
 Despite non-overlapping violating vertex sets, crossover between
 basins A and B did not produce a zero-violation coloring in 100
-generations with block sizes 25--35, suggesting the constraint
+generations ($\approx$600 child colorings evaluated, each greedy-descended
+and ILS-refined) with block sizes 25--35, suggesting the constraint
 structure permeates the entire graph.
 
 % ============================================================================
@@ -1157,6 +1186,53 @@ Whether this obstruction reflects a fundamental property of $K_{43}$
 remains an open question of significant interest to Ramsey theory.
 
 % ============================================================================
+\appendix
+\section{Certificate Specification}
+\label{app:certificate}
+% ============================================================================
+
+The proof certificates are stored as single-line JSON files with the
+following schema:
+
+\begin{tcolorbox}[colback=reedsbg, colframe=accent!50, fontupper=\small\ttfamily,
+  title={\small\bfseries Certificate JSON Schema}, coltitle=white,
+  colbacktitle=accent]
+\{\\
+\quad "label": "K42",\\
+\quad "n": 42,\\
+\quad "violations": 0,\\
+\quad "source": "cpu-ils-gf43-b2-c11",\\
+\quad "coloring": [1, -1, 1, -1, ...]\\
+\}
+\end{tcolorbox}
+
+\noindent\textbf{Fields:}
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{label}: Graph identifier ($K_n$ where $n$ = number of vertices).
+  \item \texttt{n}: Number of vertices. The coloring has
+    $n(n-1)/2$ edge values.
+  \item \texttt{violations}: Number of monochromatic $K_5$ subgraphs.
+  \item \texttt{source}: Provenance string identifying the algorithm
+    and seed parameters that produced this coloring.
+  \item \texttt{coloring}: Array of $n(n-1)/2$ values in $\{-1, +1\}$,
+    representing edge colors in lexicographic order.
+    Edge $(u,v)$ with $u < v$ is stored at index
+    $u \cdot n - u(u+1)/2 + v - u - 1$.
+\end{itemize}
+
+\noindent\textbf{Verification algorithm} (pseudocode):
+\begin{algorithmic}[1]
+\State Load coloring $\chi[0 \ldots n(n{-}1)/2{-}1]$
+\For{each 5-element subset $\{a,b,c,d,e\} \subseteq \{0,\ldots,n{-}1\}$}
+  \State $s \gets \sum_{(i,j) \in \binom{\{a,b,c,d,e\}}{2}} \chi[\text{idx}(i,j)]$
+  \If{$|s| = 10$} \textbf{report} monochromatic $K_5$
+  \EndIf
+\EndFor
+\If{no monochromatic $K_5$ found} $R(5,5) \geq n+1$ \textbf{proven}
+\EndIf
+\end{algorithmic}
+
+% ============================================================================
 % References
 % ============================================================================
 
@@ -1180,7 +1256,9 @@ J. Graph Theory \textbf{19}(3), 309--322, 1995.
 \bibitem{radziszowski2021}
 S.~P.~Radziszowski,
 \emph{Small Ramsey Numbers},
-Electron. J. Combin., Dynamic Surveys DS1, 2021.
+Electron. J. Combin., Dynamic Surveys DS1, revision~16, 2021.
+Accessed March~2026; continually updated at
+\url{https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1}.
 
 \bibitem{conlon2015}
 D.~Conlon, J.~Fox, and B.~Sudakov,
@@ -1191,11 +1269,13 @@ Surveys in Combinatorics 2015, Cambridge University Press, 49--118.
 B.~Daugherty, G.~Ward, and S.~Ryan,
 \emph{A Spectral Operator for the Riemann Hypothesis},
 Preprint, March 2026.
+\url{https://github.com/OriginNeuralAI/u24-spectral-operator}.
 
 \bibitem{daugherty2026u24}
 B.~Daugherty, G.~Ward, and S.~Ryan,
 \emph{The Universality Constant: Eleven Paths to $\Omega = 24$},
 Preprint, March 2026.
+\url{https://github.com/OriginNeuralAI/u24-spectral-operator}.
 
 \end{thebibliography}
 
