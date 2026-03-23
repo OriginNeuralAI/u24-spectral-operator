@@ -42,6 +42,7 @@
 |-------|-------------|-----|-----|-------|
 | **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Proves all nontrivial zeta zeros lie on Re(s) = 1/2 | [PDF](papers/spectral-operator/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0) | [TeX](papers/spectral-operator/main.tex) |
 | **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | [TeX](papers/universality-constant/main.tex) |
+| **Computational Lower Bounds for R(5,5)** (v1.0) | Constructive proof R(5,5) ≥ 43 via GF(43) cycle-type seeding + GPU optimization; K₄₃ two-violation frontier | [PDF](papers/ramsey-r55/main.pdf) | — | [TeX](papers/ramsey-r55/main.tex) |
 
 ## Key Result
 
@@ -151,7 +152,8 @@ u24-spectral-operator/
 ├── PROOF.md                      # 9-step unconditional proof outline
 ├── papers/
 │   ├── spectral-operator/       # RH paper (v12.0) — .tex + .pdf
-│   └── universality-constant/   # Omega paper (v1.3) — .tex + .pdf
+│   ├── universality-constant/   # Omega paper (v1.3) — .tex + .pdf
+│   └── ramsey-r55/              # R(5,5) lower bounds paper (v1.0) — .tex + .pdf
 ├── data/
 │   ├── riemann-zeros/           # 50, 500, 2000 zeros + 1000 GPU (RTX 5070 Ti)
 │   ├── eigenvalue-verification/ # 200-zero KS test vs GUE
@@ -276,6 +278,15 @@ If you use this data or analysis, please cite:
   year    = {2026},
   month   = {March},
   note    = {v1.3, zero free parameters}
+}
+
+@article{daugherty2026ramsey,
+  title   = {Computational Lower Bounds for $R(5,5)$: A Constructive Proof
+             via {GPU}-Accelerated Combinatorial Optimization},
+  author  = {Daugherty, Bryan and Ward, Gregory and Ryan, Shawn},
+  year    = {2026},
+  month   = {March},
+  note    = {v1.0, exhaustive verification at 962{,}598 five-cliques}
 }
 ```
 

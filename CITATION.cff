@@ -47,3 +47,14 @@ references:
         given-names: Shawn
     year: 2026
     month: 3
+  - type: article
+    title: "Computational Lower Bounds for R(5,5): A Constructive Proof via GPU-Accelerated Combinatorial Optimization"
+    authors:
+      - family-names: Daugherty
+        given-names: Bryan
+      - family-names: Ward
+        given-names: Gregory
+      - family-names: Ryan
+        given-names: Shawn
+    year: 2026
+    month: 3
