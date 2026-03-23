@@ -17,6 +17,7 @@
 [![Data: Open](https://img.shields.io/badge/Data-Open-brightgreen.svg)](#data)
 [![Verification](https://img.shields.io/badge/Verification-133%2F133_checks-D4AF37.svg)](#verification-dashboard)
 [![Reproducible](https://img.shields.io/badge/Reproducible-with_public_tools-blue.svg)](#notebooks)
+[![BSV Anchored](https://img.shields.io/badge/BSV-On--Chain_Anchored-E8B125.svg)](#on-chain-anchoring)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 
 </div>
@@ -35,10 +36,10 @@
 
 ## Papers
 
-| Paper | Description | PDF | LaTeX |
-|-------|-------------|-----|-------|
-| **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Self-adjoint H_D on C²³ ⊗ L₂([0,2π]), 5M zeta zeros verified | [PDF](papers/spectral-operator/main.pdf) | [TeX](papers/spectral-operator/main.tex) |
-| **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [TeX](papers/universality-constant/main.tex) |
+| Paper | Description | PDF | BSV | LaTeX |
+|-------|-------------|-----|-----|-------|
+| **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Self-adjoint H_D on C²³ ⊗ L₂([0,2π]), 5M zeta zeros verified | [PDF](papers/spectral-operator/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/94513c3aef41515874a477f0a4eeeef4365882ae22d77bcec25c356d3cfd6f2f/0) | [TeX](papers/spectral-operator/main.tex) |
+| **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/309a4630ef1597eba3cc366cc9b05b642de794568ae5643fbcda58d6d46d15aa/0) | [TeX](papers/universality-constant/main.tex) |
 
 ## Key Result
 
@@ -221,6 +222,17 @@ python scripts/regenerate_figures.py   # Regenerate all figures from data
 python scripts/validate_data.py        # Run data integrity checks
 python scripts/reconstruct_J.py       # Rebuild coupling matrix from Reeds table
 ```
+
+## On-Chain Anchoring
+
+Both papers are permanently anchored to the BSV blockchain via the SmartLedger IP Registry, providing immutable, timestamped proof of authorship.
+
+| Paper | BSV Transaction | SHA-256 |
+|-------|-----------------|---------|
+| A Spectral Operator for the Riemann Hypothesis | [`94513c3a...`](https://plugins.whatsonchain.com/api/plugin/main/94513c3aef41515874a477f0a4eeeef4365882ae22d77bcec25c356d3cfd6f2f/0) | `2e1e7776...1bbc28` |
+| The Universality Constant: Eleven Paths to Ω = 24 | [`309a4630...`](https://plugins.whatsonchain.com/api/plugin/main/309a4630ef1597eba3cc366cc9b05b642de794568ae5643fbcda58d6d46d15aa/0) | `e78189b2...a56e14` |
+
+Registered by **SmartLedger Solutions** (CAGE: 10HF4, UEI: C5RUDT3WS844) on behalf of Bryan W. Daugherty, Gregory J. Ward, and Shawn M. Ryan.
 
 ## Citation
 
