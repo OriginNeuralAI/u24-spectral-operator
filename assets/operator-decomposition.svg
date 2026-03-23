@@ -1,68 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="Georgia, serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
     <filter id="glow">
       <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect x="0" y="0" width="800" height="500" fill="#0A2540"/>
+  <rect width="800" height="500" fill="#0A2540"/>
 
   <!-- Title -->
-  <text x="400" y="50" text-anchor="middle" font-size="24px" fill="#FFFFFF" filter="url(#glow)">Operator Decomposition</text>
+  <text x="400" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#FFFFFF" font-weight="bold">Operator Decomposition</text>
+  <text x="400" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#D4AF37">H_D = J &#x2297; I + I &#x2297; T + V_HP + V_Z</text>
 
-  <!-- Box 1: J ⊗ I -->
-  <g filter="url(#glow)">
-    <rect x="30" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-    <text x="100" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">J &#x2297; I</text>
-    <text x="100" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Coupling</text>
-    <text x="100" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">23&#xD7;23 Reeds matrix</text>
-  </g>
+  <!-- Box 1: J tensor I -->
+  <rect x="30" y="130" width="160" height="160" rx="10" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="110" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#FFFFFF" font-weight="bold">J &#x2297; I</text>
+  <line x1="55" y1="185" x2="165" y2="185" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <text x="110" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#D4AF37">Coupling</text>
+  <text x="110" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">23&#xD7;23 Reeds</text>
+  <text x="110" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">matrix J</text>
 
   <!-- Plus 1 -->
-  <text x="185" y="225" text-anchor="middle" font-size="30px" fill="#D4AF37" filter="url(#glow)">+</text>
+  <text x="205" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#D4AF37">+</text>
 
-  <!-- Box 2: I ⊗ T -->
-  <g filter="url(#glow)">
-    <rect x="230" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-    <text x="300" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">I &#x2297; T</text>
-    <text x="300" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Kinetic</text>
-    <text x="300" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">&#x2212;d&#xB2;/d&#x03B8;&#xB2; on [0,2&#x03C0;]</text>
-  </g>
+  <!-- Box 2: I tensor T -->
+  <rect x="220" y="130" width="160" height="160" rx="10" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="300" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#FFFFFF" font-weight="bold">I &#x2297; T</text>
+  <line x1="245" y1="185" x2="355" y2="185" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <text x="300" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#D4AF37">Kinetic</text>
+  <text x="300" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">&#x2212;d&#xB2;/d&#x3B8;&#xB2;</text>
+  <text x="300" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">on [0, 2&#x3C0;]</text>
 
   <!-- Plus 2 -->
-  <text x="385" y="225" text-anchor="middle" font-size="30px" fill="#D4AF37" filter="url(#glow)">+</text>
+  <text x="395" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#D4AF37">+</text>
 
   <!-- Box 3: V_HP -->
-  <g filter="url(#glow)">
-    <rect x="430" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-    <text x="500" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">V_HP</text>
-    <text x="500" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Hardy&#x2013;P&#xF3;lya</text>
-    <text x="500" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">Conformal potential</text>
-  </g>
+  <rect x="410" y="130" width="160" height="160" rx="10" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="490" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#FFFFFF" font-weight="bold">V_HP</text>
+  <line x1="435" y1="185" x2="545" y2="185" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <text x="490" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#D4AF37">Hardy&#x2013;P&#xF3;lya</text>
+  <text x="490" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">Conformal</text>
+  <text x="490" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">potential</text>
 
   <!-- Plus 3 -->
-  <text x="585" y="225" text-anchor="middle" font-size="30px" fill="#D4AF37" filter="url(#glow)">+</text>
+  <text x="585" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#D4AF37">+</text>
 
   <!-- Box 4: V_Z -->
-  <g filter="url(#glow)">
-    <rect x="630" y="170" width="140" height="100" rx="10" ry="10" fill="#0A2540" fill-opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-    <text x="700" y="200" text-anchor="middle" font-size="22px" fill="#FFFFFF">V_Z</text>
-    <text x="700" y="230" text-anchor="middle" font-size="18px" fill="#FFFFFF">Zeta coupling</text>
-    <text x="700" y="255" text-anchor="middle" font-size="16px" fill="#FFFFFF">log|&#x03B6;(&#x00BD;+it)| link</text>
-  </g>
+  <rect x="600" y="130" width="160" height="160" rx="10" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="680" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#FFFFFF" font-weight="bold">V_Z</text>
+  <line x1="625" y1="185" x2="735" y2="185" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  <text x="680" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#D4AF37">Zeta coupling</text>
+  <text x="680" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">log|&#x3B6;(&#xBD;+it)|</text>
+  <text x="680" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.8">spectral link</text>
 
-  <!-- Horizontal line -->
-  <line x1="30" y1="350" x2="770" y2="350" stroke="#D4AF37" stroke-width="2" filter="url(#glow)"/>
+  <!-- Divider line -->
+  <line x1="30" y1="340" x2="770" y2="340" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
 
-  <!-- Full Hilbert space text -->
-  <text x="400" y="380" text-anchor="middle" font-size="20px" fill="#FFFFFF" filter="url(#glow)">Full Hilbert space: C&#xB2;&#xB3; &#x2297; L&#xB2;([0,2&#x03C0;])</text>
+  <!-- Hilbert space -->
+  <text x="400" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#FFFFFF">Full Hilbert space: C&#xB2;&#xB3; &#x2297; L&#xB2;([0, 2&#x3C0;])</text>
 
-  <!-- Bottom parameters text -->
-  <text x="400" y="450" text-anchor="middle" font-size="14px" fill="#D4AF37" filter="url(#glow)">&#x03BB;_max(J) = 5.5232  |  &#x03BA;(J) = 23,015,945  |  &#x03B1;_D = 0.008193</text>
+  <!-- Bottom constants -->
+  <text x="400" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#D4AF37">&#x3BB;_max(J) = 5.5232</text>
+  <text x="400" y="445" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#D4AF37">&#x3BA;(J) = 23,015,945  |  &#x3B1;_D = 0.008193</text>
 
+  <!-- Subtle 24-cell vertex dots -->
+  <circle cx="110" cy="115" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="300" cy="115" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="490" cy="115" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="680" cy="115" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="110" cy="305" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="300" cy="305" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="490" cy="305" r="3" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="680" cy="305" r="3" fill="#D4AF37" opacity="0.3"/>
 </svg>

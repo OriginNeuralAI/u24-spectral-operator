@@ -1,83 +1,77 @@
-<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
-    <defs>
-        <filter id="glow">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-            <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#D4AF37" />
-        </marker>
-    </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
 
-    <!-- Background -->
-    <rect x="0" y="0" width="800" height="500" fill="#0A2540"/>
+  <rect width="800" height="500" fill="#0A2540"/>
 
-    <!-- Title and Subtitle -->
-    <text x="400" y="40" text-anchor="middle" font-size="24px" fill="#FFFFFF" filter="url(#glow)">Verification Pipeline</text>
-    <text x="400" y="70" text-anchor="middle" font-size="20px" fill="#D4AF37" filter="url(#glow)">133/133 checks pass</text>
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#FFFFFF" font-weight="bold">Verification Pipeline</text>
+  <text x="400" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#D4AF37">133/133 checks pass</text>
 
-    <!-- Column 1: Structural -->
-    <g filter="url(#glow)">
-        <rect x="20" y="120" width="160" height="170" rx="8" ry="8" fill="#0A2540" opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-        <text x="100" y="145" text-anchor="middle" font-size="18px" fill="#FFFFFF">Structural</text>
-        <text x="35" y="175" font-size="16px" fill="#D4AF37">46 checks</text>
-        <text x="35" y="200" font-size="14px" fill="#FFFFFF">• Self-adjointness</text>
-        <text x="35" y="220" font-size="14px" fill="#FFFFFF">• Domain density</text>
-        <text x="35" y="240" font-size="14px" fill="#FFFFFF">• Spectral resolution</text>
-        <text x="165" y="270" text-anchor="end" font-size="18px" fill="#00FF00">✓</text>
-    </g>
+  <!-- Column 1: Structural -->
+  <rect x="20" y="100" width="170" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="105" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#FFFFFF" font-weight="bold">Structural</text>
+  <text x="35" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">46 checks</text>
+  <line x1="35" y1="165" x2="175" y2="165" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
+  <text x="35" y="188" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Self-adjointness</text>
+  <text x="35" y="210" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Domain density</text>
+  <text x="35" y="232" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Spectral resolution</text>
+  <text x="105" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#00CC66">&#x2713;</text>
 
-    <!-- Column 2: RH Bridge -->
-    <g filter="url(#glow)">
-        <rect x="220" y="120" width="160" height="170" rx="8" ry="8" fill="#0A2540" opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-        <text x="300" y="145" text-anchor="middle" font-size="18px" fill="#FFFFFF">RH Bridge</text>
-        <text x="235" y="175" font-size="16px" fill="#D4AF37">26 checks</text>
-        <text x="235" y="200" font-size="14px" fill="#FFFFFF">• Engine certificate</text>
-        <text x="235" y="220" font-size="14px" fill="#FFFFFF">• Zero matching</text>
-        <text x="235" y="240" font-size="14px" fill="#FFFFFF">• Perturbation stability</text>
-        <text x="365" y="270" text-anchor="end" font-size="18px" fill="#00FF00">✓</text>
-    </g>
+  <!-- Arrow 1 -->
+  <line x1="195" y1="200" x2="215" y2="200" stroke="#D4AF37" stroke-width="2"/>
+  <polygon points="215,195 225,200 215,205" fill="#D4AF37"/>
 
-    <!-- Column 3: GUE Form Factor -->
-    <g filter="url(#glow)">
-        <rect x="420" y="120" width="160" height="170" rx="8" ry="8" fill="#0A2540" opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-        <text x="500" y="145" text-anchor="middle" font-size="18px" fill="#FFFFFF">GUE Form Factor</text>
-        <text x="435" y="175" font-size="16px" fill="#D4AF37">46 checks</text>
-        <text x="435" y="200" font-size="14px" fill="#FFFFFF">• R₂(r) convergence</text>
-        <text x="435" y="220" font-size="14px" fill="#FFFFFF">• Level spacing</text>
-        <text x="435" y="240" font-size="14px" fill="#FFFFFF">• KS tests at 9 scales</text>
-        <text x="565" y="270" text-anchor="end" font-size="18px" fill="#00FF00">✓</text>
-    </g>
+  <!-- Column 2: RH Bridge -->
+  <rect x="230" y="100" width="170" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="315" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#FFFFFF" font-weight="bold">RH Bridge</text>
+  <text x="245" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">26 checks</text>
+  <line x1="245" y1="165" x2="385" y2="165" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
+  <text x="245" y="188" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Engine certificate</text>
+  <text x="245" y="210" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Zero matching</text>
+  <text x="245" y="232" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Perturbation stability</text>
+  <text x="315" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#00CC66">&#x2713;</text>
 
-    <!-- Column 4: Spectral Inclusion -->
-    <g filter="url(#glow)">
-        <rect x="620" y="120" width="160" height="170" rx="8" ry="8" fill="#0A2540" opacity="0.8" stroke="#D4AF37" stroke-width="2"/>
-        <text x="700" y="145" text-anchor="middle" font-size="18px" fill="#FFFFFF">Spectral Inclusion</text>
-        <text x="635" y="175" font-size="16px" fill="#D4AF37">15 checks</text>
-        <text x="635" y="200" font-size="14px" fill="#FFFFFF">• Monster prime peaks</text>
-        <text x="635" y="220" font-size="14px" fill="#FFFFFF">• 14/15 detected</text>
-        <text x="635" y="240" font-size="14px" fill="#FFFFFF">• Moonshine correlation</text>
-        <text x="765" y="270" text-anchor="end" font-size="18px" fill="#00FF00">✓</text>
-    </g>
+  <!-- Arrow 2 -->
+  <line x1="405" y1="200" x2="425" y2="200" stroke="#D4AF37" stroke-width="2"/>
+  <polygon points="425,195 435,200 425,205" fill="#D4AF37"/>
 
-    <!-- Arrows -->
-    <line x1="180" y1="205" x2="220" y2="205" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
-    <line x1="380" y1="205" x2="420" y2="205" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
-    <line x1="580" y1="205" x2="620" y2="205" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+  <!-- Column 3: GUE Form Factor -->
+  <rect x="440" y="100" width="170" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="525" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#FFFFFF" font-weight="bold">GUE Form Factor</text>
+  <text x="455" y="155" font-family="Georgia, serif" font-size="15" fill="#D4AF37">46 checks</text>
+  <line x1="455" y1="165" x2="595" y2="165" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
+  <text x="455" y="188" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; R&#x2082;(r) convergence</text>
+  <text x="455" y="210" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Level spacing</text>
+  <text x="455" y="232" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; KS tests at 9 scales</text>
+  <text x="525" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#00CC66">&#x2713;</text>
 
-    <!-- Horizontal Gold Bar -->
-    <rect x="20" y="320" width="760" height="4" fill="#D4AF37" filter="url(#glow)"/>
+  <!-- Arrow 3 -->
+  <line x1="615" y1="200" x2="635" y2="200" stroke="#D4AF37" stroke-width="2"/>
+  <polygon points="635,195 645,200 635,205" fill="#D4AF37"/>
 
-    <!-- Result Box -->
-    <g filter="url(#glow)">
-        <rect x="200" y="350" width="400" height="60" rx="8" ry="8" fill="#1A3A5A" opacity="0.9" stroke="#D4AF37" stroke-width="2"/>
-        <text x="400" y="388" text-anchor="middle" font-size="30px" fill="#FFFFFF">ALL PASS: 133/133</text>
-    </g>
+  <!-- Column 4: Spectral Inclusion -->
+  <rect x="650" y="100" width="130" height="200" rx="8" fill="#0A2540" stroke="#D4AF37" stroke-width="2"/>
+  <text x="715" y="128" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#FFFFFF" font-weight="bold">Spectral</text>
+  <text x="715" y="147" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#FFFFFF" font-weight="bold">Inclusion</text>
+  <text x="660" y="170" font-family="Georgia, serif" font-size="15" fill="#D4AF37">15 checks</text>
+  <line x1="660" y1="178" x2="770" y2="178" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
+  <text x="660" y="200" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Monster primes</text>
+  <text x="660" y="222" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; 14/15 detected</text>
+  <text x="660" y="244" font-family="Georgia, serif" font-size="13" fill="#FFFFFF" opacity="0.85">&#x2022; Moonshine corr.</text>
+  <text x="715" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#00CC66">&#x2713;</text>
 
-    <!-- Bottom Text -->
-    <text x="400" y="450" text-anchor="middle" font-size="14px" fill="#D4AF37" filter="url(#glow)">R₂ L₂ = 0.026 at N = 5M  |  α = 0.2833  |  H₂ = 0 at 7 scales</text>
+  <!-- Gold bar -->
+  <rect x="20" y="330" width="760" height="3" fill="#D4AF37" opacity="0.6"/>
 
+  <!-- Result box -->
+  <rect x="220" y="355" width="360" height="55" rx="8" fill="#112840" stroke="#D4AF37" stroke-width="2"/>
+  <text x="400" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#FFFFFF" font-weight="bold">ALL PASS: 133/133</text>
+
+  <!-- Bottom -->
+  <text x="400" y="450" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#D4AF37">R&#x2082; L&#x2082; = 0.026 at N = 5M  |  &#x3B1; = 0.2833  |  H&#x2082; = 0 at 7 scales</text>
 </svg>
