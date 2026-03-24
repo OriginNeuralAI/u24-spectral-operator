@@ -44,6 +44,7 @@
 | **Complete Proofs: Spectral Operator Approach to RH** (v1.0) | Self-contained proofs for every lemma and theorem; 12 new supporting lemmas, 85 references | [PDF](papers/complete-proofs/complete-proofs.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989/0) | [TeX](papers/complete-proofs/main.tex) |
 | **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | [TeX](papers/universality-constant/main.tex) |
 | **Computational Lower Bounds for R(5,5)** (v1.0) | Constructive proof R(5,5) ≥ 43 via GF(43) cycle-type seeding + GPU optimization; K₄₃ two-violation frontier | [PDF](papers/ramsey-r55/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/0d99022d4708ec13e3ba8bc6318d2904719c07bf54d18653a60637d6e77204bc/0) | [TeX](papers/ramsey-r55/main.tex) |
+| **Structural Obstruction at K₄₃: Evidence That R(5,5) = 43** (v1.0) | SAT/BCP UNSAT proof, exhaustive 14-var enumeration, zero 2-flips, distributed obstruction hypothesis | [PDF](papers/ramsey-r55-pt2/main.pdf) | — | [TeX](papers/ramsey-r55-pt2/main.tex) |
 
 ## Key Result
 
