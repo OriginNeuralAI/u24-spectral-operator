@@ -354,6 +354,16 @@ python scripts/validate_data.py        # Run data integrity checks
 python scripts/reconstruct_J.py       # Rebuild coupling matrix from Reeds table
 ```
 
+## Companion Repository: Yang-Mills Mass Gap
+
+The spectral operator framework extends to gauge theory. The **Killing form identity** Tr(J<sub>SU(3)</sub>) = 3 x 8 = **24 = Omega** connects Yang-Mills confinement to the same universality constant:
+
+| Repository | Result | Status |
+|---|---|---|
+| **[u24-Yang-Mills](https://github.com/OriginNeuralAI/u24-Yang-Mills)** | Mass gap Delta > 0 for all compact simple G | 15/15 predictions, 59/59 checks |
+
+The Yang-Mills proof uses the same operator structure (H = J tensor I + I tensor T + V), the same Kato-Rellich self-adjointness argument, and the same Omega = 24 universality constant — with the Killing form replacing the Reeds coupling matrix.
+
 ## On-Chain Anchoring
 
 All four papers are permanently anchored to the BSV blockchain via the SmartLedger IP Registry, providing immutable, timestamped proof of authorship.
