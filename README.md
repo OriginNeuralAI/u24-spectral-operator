@@ -216,6 +216,7 @@ u24-spectral-operator/
 ├── PROOF.md                      # 9-step unconditional proof outline
 ├── papers/
 │   ├── spectral-operator/       # RH paper (v12.0) — .tex + .pdf
+│   ├── complete-proofs/         # Full proofs companion (v1.0) — .tex + .pdf
 │   ├── universality-constant/   # Omega paper (v1.3) — .tex + .pdf
 │   └── ramsey-r55/              # R(5,5) lower bounds paper (v1.0) — .tex + .pdf
 ├── data/
@@ -334,6 +335,14 @@ If you use this data or analysis, please cite:
   year    = {2026},
   month   = {March},
   note    = {v12.0, 140/140 automated verification checks}
+}
+
+@article{daugherty2026completeproofs,
+  title   = {Complete Proofs for the Spectral Operator Approach to the {Riemann} Hypothesis},
+  author  = {Daugherty, Bryan and Ward, Gregory and Ryan, Shawn},
+  year    = {2026},
+  month   = {March},
+  note    = {v1.0, 12 new supporting lemmas, 85 references}
 }
 
 @article{daugherty2026universality,
