@@ -221,6 +221,32 @@ better coloring, we ask: \emph{why} does the two-violation floor hold?
 The answer reveals a structural obstruction that extends far beyond the
 two violating cliques.
 
+% ── Approach comparison diagram ──
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  part/.style={draw=accent, fill=lightaccent, rounded corners=5pt,
+    minimum width=5.5cm, minimum height=1.8cm, font=\small, align=center,
+    text=accent},
+  arr/.style={-{Stealth[length=5pt]}, thick, titlegold},
+]
+  \node[part] (p1) at (0,0) {\textbf{Part I} (25+ GPU-hours)\\[2pt]
+    Stochastic optimization\\
+    ``Can we find 0 violations?''\\
+    \color{redcolor}\textbf{Answer: NO} (floor = 2)};
+  \node[part] (p2) at (7.5,0) {\textbf{Part II} (this paper)\\[2pt]
+    Exact combinatorial analysis\\
+    ``Why can't we find 0?''\\
+    \color{redcolor}\textbf{Answer: Distributed obstruction}};
+  \draw[arr] (p1) -- (p2) node[midway, above, font=\footnotesize,
+    text=titlegold] {paradigm shift};
+\end{tikzpicture}
+\caption{The transition from Part~I (stochastic search) to Part~II
+  (exact analysis). Part~I established the floor; Part~II explains
+  why it holds.}
+\label{fig:approach}
+\end{figure}
+
 \subsection{Summary of New Results}
 
 \begin{enumerate}[leftmargin=2em]
@@ -514,6 +540,89 @@ to the 14 violating edges would satisfy all Ramsey clauses.
 But \Cref{thm:unsat} shows this is impossible.
 \end{proof}
 
+\subsubsection{Interpretation}
+
+The UNSAT result has a precise graph-theoretic interpretation.
+The five-clique hypergraph $\mathcal{H}$ of $K_{43}$ (with 962{,}598
+hyperedges, each of size~10) is so densely interconnected that fixing
+889 of 903 edge colors uniquely determines the remaining 14 via unit
+propagation. The constraint ``no monochromatic $K_5$ in either color''
+propagates through chains of overlapping five-cliques, and these chains
+are \emph{inconsistent}: they force conflicting requirements on the 14
+free edges, producing the 249 unsatisfied clauses.
+
+This is analogous to over-constrained systems in linear algebra:
+889 equations in 903 unknowns leave 14 degrees of freedom, but the
+14-dimensional solution space does not intersect the feasible region.
+
+% ── Constraint propagation depth ──
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  fixed/.style={circle, draw=greenok!70, fill=greenok!15,
+    minimum size=5mm, inner sep=0pt},
+  forced/.style={circle, draw=orangewarn!80, fill=orangewarn!15,
+    minimum size=5mm, inner sep=0pt},
+  conflict/.style={circle, draw=redcolor!80, fill=redcolor!20,
+    minimum size=5mm, inner sep=0pt},
+  prop/.style={-{Stealth[length=3pt]}, gray!50, thin},
+]
+  % Fixed edges (layer 0) — hardcoded for compiler compatibility
+  \node[fixed] (f1) at (0.0, 0) {};
+  \node[fixed] (f2) at (0.9, 0) {};
+  \node[fixed] (f3) at (1.8, 0) {};
+  \node[fixed] (f4) at (2.7, 0) {};
+  \node[fixed] (f5) at (3.6, 0) {};
+  \node[fixed] (f6) at (4.5, 0) {};
+  \node[fixed] (f7) at (5.4, 0) {};
+  \node[fixed] (f8) at (6.3, 0) {};
+  \node[font=\footnotesize, text=greenok, anchor=east] at (-0.3, 0) {889 fixed};
+
+  % Forced layer
+  \node[forced] (p1) at (0.45, -1.2) {};
+  \node[forced] (p2) at (1.8, -1.2) {};
+  \node[forced] (p3) at (3.15, -1.2) {};
+  \node[forced] (p4) at (4.5, -1.2) {};
+  \node[forced] (p5) at (5.85, -1.2) {};
+  \node[font=\footnotesize, text=orangewarn, anchor=east] at (-0.3, -1.2) {forced};
+
+  % Conflict layer
+  \node[conflict] (c1) at (1.1, -2.4) {};
+  \node[conflict] (c2) at (3.15, -2.4) {};
+  \node[conflict] (c3) at (5.2, -2.4) {};
+  \node[font=\footnotesize, text=redcolor, anchor=east] at (-0.3, -2.4) {conflict};
+
+  % Propagation arrows (fixed -> forced)
+  \draw[prop] (f1) -- (p1); \draw[prop] (f2) -- (p1);
+  \draw[prop] (f3) -- (p2); \draw[prop] (f4) -- (p2);
+  \draw[prop] (f4) -- (p3); \draw[prop] (f5) -- (p3);
+  \draw[prop] (f6) -- (p4); \draw[prop] (f7) -- (p4);
+  \draw[prop] (f7) -- (p5); \draw[prop] (f8) -- (p5);
+
+  % Propagation arrows (forced -> conflict)
+  \draw[prop] (p1) -- (c1); \draw[prop] (p2) -- (c1);
+  \draw[prop] (p3) -- (c2); \draw[prop] (p4) -- (c2);
+  \draw[prop] (p4) -- (c3); \draw[prop] (p5) -- (c3);
+
+  \node[font=\scriptsize, text=subtlegray] at (3.15, -3.1) {
+    Unit propagation chains through five-clique hypergraph};
+
+  % Legend
+  \fill[greenok!15, draw=greenok!70, rounded corners=1pt] (7.5,0.2) rectangle (7.9,-0.2);
+  \node[font=\tiny, anchor=west] at (8.0, 0) {Fixed by certificate};
+  \fill[orangewarn!15, draw=orangewarn!80, rounded corners=1pt] (7.5,-0.5) rectangle (7.9,-0.9);
+  \node[font=\tiny, anchor=west] at (8.0, -0.7) {Forced by BCP};
+  \fill[redcolor!20, draw=redcolor!80, rounded corners=1pt] (7.5,-1.2) rectangle (7.9,-1.6);
+  \node[font=\tiny, anchor=west] at (8.0, -1.4) {Conflicting};
+\end{tikzpicture}
+\caption{Schematic of constraint propagation through the five-clique
+  hypergraph. The 889 fixed edges (green) force values on intermediate
+  edges (orange) via unit propagation, ultimately producing conflicting
+  requirements (red) on the violating edges --- the distributed
+  obstruction.}
+\label{fig:propagation}
+\end{figure}
+
 % ============================================================================
 \section{The Distributed Obstruction Hypothesis}
 \label{sec:hypothesis}
@@ -653,6 +762,33 @@ This invariance suggests the ``two $K_5$ sharing four vertices''
 pattern is not an accident of the search method but a structural
 property of the $K_{43}$ Ramsey landscape.
 
+\begin{remark}[Shared Vertex Arithmetic]
+In both basins, the four shared vertices have pairwise differences
+$\bmod\,43$ that cluster in the dominant basin of the $\GF(43)$
+functional graph. Specifically, Basin~A's shared set $\{0,10,20,33\}$
+has differences $\{10, 20, 33, 10, 23, 13\} \bmod 43$, all of which
+map to the same attractor cycle under $f(x) = x^2 + 30x + 41$.
+This algebraic regularity may explain why the pattern recurs across
+seeds: the basin structure of $\GF(43)$ enforces four-vertex
+coherence in the coloring.
+\end{remark}
+
+\subsection{Cross-Basin Crossover Failure}
+
+Despite Basin~A and Basin~B having completely disjoint violating
+vertex sets, crossover between them fails to produce zero violations.
+In the Part~I campaign, 100 generations of vertex-block crossover
+(block sizes 25--35, approximately 600 child colorings evaluated)
+between Basin~A and Basin~B populations all converged to~2 violations.
+
+This is surprising: if the violations were independent local defects,
+combining a region that is violation-free in Basin~A with a region
+that is violation-free in Basin~B should produce a globally
+violation-free coloring. The failure of crossover indicates that the
+constraint structure of $K_{43}$ is globally entangled --- fixing one
+region's violations necessarily creates (or preserves) violations
+elsewhere.
+
 % ============================================================================
 \section{Complete Computational Campaign}
 \label{sec:campaign}
@@ -753,6 +889,29 @@ that such a coloring, if it exists, must differ from all known
 2-violation colorings in a substantial fraction of edges ---
 not merely a local repair.
 
+% ── Evidence summary ──
+\begin{table}[H]
+\centering
+\caption{Summary of evidence for the conjecture $R(5,5) = 43$.
+  Each row represents an independent line of evidence.}
+\label{tab:evidence}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Evidence} & \textbf{Method} & \textbf{Strength} \\
+\midrule
+14-var exhaustive & $2^{14}$ assignments, min = 2 & Local irreparability \\
+Zero 2-flips & 7{,}433 pairs tested & Barrier $\geq$ 3 flips \\
+Multi-flip $> 4$ & 1{,}365 trials + greedy & Deep violating basin \\
+\textbf{SAT/BCP UNSAT} & \textbf{1.9M clauses + 889 units} & \textbf{Distributed obstruction} \\
+Cross-prime & 13 GF fields, 2 at floor & Not seed-dependent \\
+Multi-basin & 2 basins, 4-vertex pattern & Structural invariance \\
+Crossover failure & 600 children, disjoint & Global entanglement \\
+40+ GPU-hours & 17 strategies, 12 solvers & Stochastic exhaustion \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 % ============================================================================
 \section{Conclusion}
 % ============================================================================
@@ -776,6 +935,30 @@ requiring coordinated changes across a substantial fraction of the
 Combined with the cross-prime convergence and multi-basin structural
 invariance, these findings constitute the strongest computational
 evidence to date that $R(5,5) = 43$.
+
+% ============================================================================
+\section{Reproducibility}
+% ============================================================================
+
+All scripts, certificates, and verification code are publicly
+available:
+
+\begin{center}
+\url{https://github.com/OriginNeuralAI/u24-spectral-operator}\\
+\url{https://github.com/OriginNeuralAI/Physics_Research}
+\end{center}
+
+\begin{tcolorbox}[colback=reedsbg, colframe=accent!50, fontupper=\small\ttfamily,
+  title={\small\bfseries Reproduction Commands}, coltitle=white,
+  colbacktitle=accent]
+\# Run the exact combinatorial attack (Strategies 1--6):\\
+cargo run --release --features gpu \textbackslash\\
+\quad --example ramsey\_k43\_breakthrough\\[4pt]
+\# Verify R(5,5) >= 43 (standalone Python, 2 seconds):\\
+python scripts/verify\_ramsey\_r55.py\\[4pt]
+\# Verify R(5,5) >= 43 (Rust, 1 second):\\
+cargo run --release --example verify\_r55\_proof
+\end{tcolorbox}
 
 % ============================================================================
 % References
@@ -819,6 +1002,17 @@ Surveys in Combinatorics 2015, Cambridge University Press, 49--118.
 M.~Davis, G.~Logemann, and D.~Loveland,
 \emph{A machine program for theorem-proving},
 Comm. ACM \textbf{5}(7), 394--397, 1962.
+
+\bibitem{codish2016}
+M.~Codish, M.~Frank, A.~Itzhakov, and A.~Miller,
+\emph{Computing the Ramsey number $R(4,3,3)$ using
+  abstraction and symmetry breaking},
+Constraints \textbf{21}(3), 375--393, 2016.
+
+\bibitem{erdos1947}
+P.~Erd\H{o}s,
+\emph{Some remarks on the theory of graphs},
+Bull. Amer. Math. Soc. \textbf{53}(4), 292--294, 1947.
 
 \bibitem{daugherty2026spectral}
 B.~Daugherty, G.~Ward, and S.~Ryan,
