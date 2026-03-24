@@ -154,6 +154,7 @@ All data is available in the [u24-spectral-operator repository](https://github.c
 ## References
 
 - **Paper 1:** B. Daugherty, G. Ward, S. Ryan, "A Spectral Operator for the Riemann Hypothesis" (v12.0, March 2026). [PDF](papers/spectral-operator/main.pdf) · [BSV](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0)
+- **Paper 1b:** B. Daugherty, G. Ward, S. Ryan, "Complete Proofs: Spectral Operator Approach to RH" (v1.0, March 2026). [PDF](papers/complete-proofs/complete-proofs.pdf) · [BSV](https://plugins.whatsonchain.com/api/plugin/main/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989/0)
 - **Paper 2:** B. Daugherty, G. Ward, S. Ryan, "The Universality Constant: Eleven Paths to Ω = 24" (v1.3, March 2026). [PDF](papers/universality-constant/main.pdf) · [BSV](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0)
 
 ---

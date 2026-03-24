@@ -713,19 +713,51 @@ $|\mu_n-\mu_n^{(0)}|\leq\norm{V}_\infty$ for all $n$, so the Weyl
 asymptotics of $H_D$ and $H_0$ agree to leading order.
 \end{proof}
 
-\begin{remark}[Density matching]\label{rem:density}
-For the Main Theorem (\cref{thm:main}), the prime potential $V_Z$ is
-designed so that the eigenvalue density of $H_D$, after affine rescaling,
-matches the Riemann--von~Mangoldt density
-$N_\zeta(T) = \tfrac{T}{2\pi}\log\tfrac{T}{2\pi} - \tfrac{T}{2\pi}
-+ \tfrac{7}{8} + O(\log T)$.
-The $\sqrt{\Lambda}$ Weyl growth of $N_{H_D}$ and the
-$T\log T$ growth of $N_\zeta$ are reconciled by the logarithmic
-rescaling $\Lambda(T) = (T\log T/(2\pi))^2/2$, which maps the
-Riemann density to a square-root envelope.  The primes $p\leq 47$ in
-$V_Z$ encode the low-lying explicit-formula corrections that fix this
-mapping at the scales where our verification operates.
-\end{remark}
+\begin{proposition}[Spectral-to-arithmetic density bridge]
+\label{prop:density-bridge}
+The Weyl law (\cref{prop:weyl}) gives
+$N_{H_D}(\Lambda) = 46\sqrt{2}\,\Lambda^{1/2} + O(1)$, while
+the Riemann--von~Mangoldt formula gives
+$\bar N_\xi(T) = \tfrac{T}{2\pi}\log\tfrac{T}{2\pi e} + O(\log T)$.
+These have different growth rates ($\Lambda^{1/2}$ versus $T\log T$),
+so no constant rescaling $\Lambda = C\cdot T^2$ can identify them.
+
+Define the spectral-to-arithmetic map
+$\Lambda\colon\R^+\to\R^+$ implicitly by
+\begin{equation}\label{eq:density-bridge}
+  N_{H_D}\bigl(\Lambda(T)\bigr) \;=\; \bar N_\xi(T),
+  \qquad\textit{i.e.}\quad
+  \Lambda(T) = \Bigl[\frac{\bar N_\xi(T)}{46\sqrt{2}}\Bigr]^{\!2}.
+\end{equation}
+Explicitly, for $T\gg 1$:
+\[
+  \Lambda(T) \;=\; \frac{1}{2}\!
+  \left(\frac{T\log T}{92\sqrt{2}\,\pi}\right)^{\!2}
+  \bigl(1 + O(1/\log T)\bigr).
+\]
+This is a \textbf{nonlinear} (transcendental) rescaling: quadratic
+in $T$ with a $(\log T)^2$ correction.  For the spectral determinant
+(\cref{thm:spectral-det}), we set $\Lambda(s) = \Psi(s(1{-}s))$
+where $\Psi$ is the monotone function determined by
+\cref{eq:density-bridge} via $T = T(s)$ on the critical line.
+Since $s(1{-}s)$ is invariant under $s\mapsto 1{-}s$,
+the identity $\Lambda(s) = \Lambda(1{-}s)$ holds identically.
+\end{proposition}
+
+\begin{proof}
+The smooth parts match by construction:
+$\bar N_{H_D}(\Lambda(T)) = 46\sqrt{2}\,\Lambda(T)^{1/2}
+= \bar N_\xi(T)$.
+The Weyl remainder for $H_D$ is $O(1)$ (\cref{prop:weyl}), so
+\[
+  N_D(T)
+  \;=\; N_{H_D}\bigl(\Lambda(T)\bigr)
+  \;=\; \bar N_\xi(T) + O(1)
+  \;=\; N_\xi(T) + O(\log T),
+\]
+where the last step uses the Riemann--von~Mangoldt error
+$\bar N_\xi(T) - N_\xi(T) = O(\log T)$.
+\end{proof}
 
 % ══════════════════════════════════════════════════════════════════════
 \section{The Universality Class $\mathrm{U}_{24}$}
@@ -2472,7 +2504,7 @@ converges absolutely since $\norm{V_Z R_0}\leq\norm{V_Z}_\infty\norm{R_0}<1$
 for $z$ in the resolvent set.  Each $\operatorname{tr}(V_Z R_0)^k$ sums
 over $k$-step prime paths on the Fourier lattice, generating products of
 $k$ primes from the set $\{2,3,5,\ldots,47\}$.  Under the
-spectral-to-arithmetic rescaling $\Lambda(s)$ (\cref{rem:density}),
+spectral-to-arithmetic rescaling $\Lambda(s)$ (\cref{prop:density-bridge}),
 these paths produce the terms
 $\sum_{p\leq 47} (\alpha^k\log p)/p^{ks/2}$---a \emph{partial} Euler
 product involving only the 15 primes $p\leq 47$.
@@ -2485,14 +2517,41 @@ $|R(h)|\leq C\norm{h}_{H^1}\norm{V_{\mathrm{HP}}}_\infty < 42.8\,C\norm{h}_{H^1}
 follows from the operator norm estimate in \cref{lem:bounded}.
 \end{proof}
 
+\begin{remark}[Multi-prime orbits and the remainder]
+\label{rem:multi-prime-orbits}
+The Fredholm expansion $\operatorname{tr}(V_Z R_0)^k$ sums over all
+$k$-step closed paths on the Fourier lattice~$\Z$.  At order $k\geq 3$,
+these include \emph{mixed-prime} paths visiting distinct primes
+$p_1,\ldots,p_k$ whose signed displacements cancel:
+$\pm p_1 \pm \cdots \pm p_k = 0$
+(e.g.\ $2+3-5=0$ at $k=3$).  At $k=2$, closure forces $p_1=p_2$,
+so only single-prime orbits contribute.
+
+The single-prime terms---where $p_1=\cdots=p_k=p$---produce the
+explicit sum in~\cref{eq:trace-formula}.  Mixed-prime contributions
+carry amplitude $O(\alpha^k/\prod_i\sqrt{p_i})$ and are absorbed into
+the remainder~$R(h)$; since $\alpha=0.008184$, the leading mixed
+corrections at $k=3$ are $O(\alpha^3)\approx 5.5\times 10^{-7}$.
+
+For the off-diagonal suppression (\cref{thm:form-factor}), both
+single- and mixed-prime orbits participate.  Each orbit~$\gamma$ has
+action $S_\gamma = \sum_p n_p^\gamma\log p$ with $n_p^\gamma\in\Z$.
+The fundamental theorem of arithmetic ensures rational independence
+of $\{\log 2,\log 3,\ldots,\log 47\}$: distinct coefficient vectors
+$\mathbf{n}^\gamma\neq\mathbf{n}^{\gamma'}$ give distinct actions
+$S_\gamma\neq S_{\gamma'}$.  The Weyl equidistribution bound therefore
+applies to \emph{all} orbit pairs, single-prime and mixed-prime alike.
+\end{remark}
+
 % ── 5.5.2 ────────────────────────────────────────────────────────────
 \subsubsection{Spectral Determinant Properties}
 \label{sec:spectral-det}
 
 \begin{theorem}[Spectral Determinant]\label{thm:spectral-det}
 Let $D(s) = \det_\zeta(H_D - \Lambda(s))$ be the zeta-regularised
-spectral determinant, where $\Lambda(s)=s(1-s)\cdot C_D$ with $C_D$
-calibrated by the Weyl law (\cref{prop:weyl}).  Then:
+spectral determinant, where $\Lambda(s)=\Psi(s(1{-}s))$ is the
+nonlinear rescaling from the density bridge
+(\cref{prop:density-bridge}).  Then:
 \begin{enumerate}[nosep,label=(\alph*)]
   \item $D(s)$ is entire of order~$1$.
   \item $D(s) = D(1-s)$.
@@ -2519,8 +2578,9 @@ Here $d=1$ (the circle $[0,2\pi]$), giving order~$1$.
 
 \textbf{(b)}\enspace
 Since $H_D$ is self-adjoint (\cref{thm:self-adjoint}),
-$\spec(H_D)\subset\R$.  The rescaling $\Lambda(s)=s(1-s)\cdot C_D$
-satisfies $\Lambda(s)=\Lambda(1-s)$ identically.  Therefore
+$\spec(H_D)\subset\R$.  The rescaling $\Lambda(s)=\Psi(s(1{-}s))$
+satisfies $\Lambda(s)=\Lambda(1-s)$ since $\Psi$ is a function of
+the symmetric quantity $s(1{-}s)$ (\cref{prop:density-bridge}).  Therefore
 $D(s) = \det_\zeta(H_D-\Lambda(s)) = \det_\zeta(H_D-\Lambda(1-s)) = D(1-s)$.
 
 \textbf{(c)}\enspace
@@ -2744,7 +2804,13 @@ The spectral form factor is $K_2(\tau)=(1/N)\bigl|\sum_n
 e^{2\pi i\bar{E}_n\tau}\bigr|^2$ where $\bar{E}_n$ are unfolded
 eigenvalues with unit mean spacing.  Substituting the trace formula
 (\cref{thm:trace-formula}) yields a double sum over periodic orbits
-(prime paths on the $\Z_{23}$ coupling graph):
+on the $\Z_{23}$ coupling graph.  These orbits arise from the Fredholm
+expansion: single-prime orbits (action $k\log p$) dominate at each
+order~$k$, while mixed-prime orbits ($k\geq 3$, action
+$\sum_i n_{p_i}\log p_i$ with multiple primes) contribute
+$O(\alpha^3)$ corrections absorbed into the remainder
+(\cref{rem:multi-prime-orbits}).  Both types participate in the sums
+below:
 \begin{equation}\label{eq:form-factor-double-sum}
   K_2(\tau) = \underbrace{\sum_\gamma
     |A_\gamma|^2\,\delta(\tau - T_\gamma/T_H)}
@@ -2766,10 +2832,16 @@ $\Z$-linear combination of $\{\log 2, \log 3, \log 5, \ldots,
 \log 47\}$---the logarithms of the 15~primes encoded in~$V_Z$.
 By the fundamental theorem of arithmetic, these logarithms are
 \emph{rationally independent}: $\sum_p n_p \log p = 0$ with
-$n_p\in\Z$ implies all $n_p=0$.  Consequently, for distinct orbits
-$\gamma\neq\gamma'$, the action difference $\Delta S\neq 0$ and the
-phases $e^{i\Delta S/\hbar}$ oscillate incommensurably as a function
-of the spectral parameter.
+$n_p\in\Z$ implies all $n_p=0$ (equivalently, $\prod p^{n_p}=1$
+forces every exponent to vanish by unique factorisation).
+This applies to \emph{all} orbit types: single-prime orbits have
+$S_\gamma = k\log p$ (one nonzero coefficient), while mixed-prime
+orbits have $S_\gamma = \sum_i n_{p_i}\log p_i$ (multiple nonzero
+coefficients; see \cref{rem:multi-prime-orbits}).  In both cases,
+distinct coefficient vectors yield distinct actions:
+for $\gamma\neq\gamma'$, the action difference $\Delta S\neq 0$ and
+the phases $e^{i\Delta S/\hbar}$ oscillate incommensurably as a
+function of the spectral parameter.
 
 More precisely, we apply the multi-dimensional Weyl bound for
 exponential sums over rationally independent frequencies
@@ -3166,10 +3238,14 @@ $W(s)\equiv 1$.
 
 \begin{remark}[Unconditional character of \cref{prop:W-trivial}]
 \label{rem:W-unconditional}
-The hypothesis $\delta(T)=O(\log T)$ uses only the Weyl law for $H_D$
-(\cref{prop:weyl}) and the unconditional Riemann--von~Mangoldt formula
-$N_\xi(T)=(T/2\pi)\log(T/2\pi)-T/2\pi+O(\log T)$.  No GUE input
-for the zeta zeros is required.  The stronger bound $\delta(T)=O(1)$
+The hypothesis $\delta(T)=O(\log T)$ follows from the density bridge
+(\cref{prop:density-bridge}): the nonlinear rescaling
+$\Lambda(s)=\Psi(s(1{-}s))$ is constructed so that the smooth
+counting functions match, with the Weyl remainder contributing $O(1)$
+and the Riemann--von~Mangoldt remainder contributing $O(\log T)$.
+No GUE input for the zeta zeros is required---the bound is
+a direct consequence of the spectral-to-arithmetic map definition.
+The stronger bound $\delta(T)=O(1)$
 from \cref{lem:variance-rigidity} (which assumes GUE for \emph{both}
 processes) is therefore a corollary of the full proof, not a
 prerequisite: once $W\equiv 1$ and RH are established, GUE statistics
@@ -3253,7 +3329,7 @@ for all $n$, with overwhelming probability in mesoscopic windows
 of size $L\in[1,\,N^{1-\varepsilon}]$.
 
 \emph{From rigidity to counting function.}\enspace
-The $H_D$ eigenvalues (under rescaling, \cref{rem:density}) and
+The $H_D$ eigenvalues (under rescaling, \cref{prop:density-bridge}) and
 the zeta zeros both satisfy this rigidity bound, and both have
 mean density $\sim(1/2\pi)\log T$.  Combined with Step~2
 (explicit formula comparison, which bounds the spectral shift

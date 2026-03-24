@@ -41,9 +41,9 @@
 | Paper | Description | PDF | BSV | LaTeX |
 |-------|-------------|-----|-----|-------|
 | **A Spectral Operator for the Riemann Hypothesis** (v12.0) | Proves all nontrivial zeta zeros lie on Re(s) = 1/2 | [PDF](papers/spectral-operator/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0) | [TeX](papers/spectral-operator/main.tex) |
-| **Complete Proofs: Spectral Operator Approach to RH** (v1.0) | Self-contained proofs for every lemma and theorem; 12 new supporting lemmas, 85 references | [PDF](papers/complete-proofs/complete-proofs.pdf) | — | [TeX](papers/complete-proofs/main.tex) |
+| **Complete Proofs: Spectral Operator Approach to RH** (v1.0) | Self-contained proofs for every lemma and theorem; 12 new supporting lemmas, 85 references | [PDF](papers/complete-proofs/complete-proofs.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989/0) | [TeX](papers/complete-proofs/main.tex) |
 | **The Universality Constant: Eleven Paths to Ω = 24** (v1.3) | Derives α_EM ≈ 1/137.03 from Monster group, zero free parameters | [PDF](papers/universality-constant/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | [TeX](papers/universality-constant/main.tex) |
-| **Computational Lower Bounds for R(5,5)** (v1.0) | Constructive proof R(5,5) ≥ 43 via GF(43) cycle-type seeding + GPU optimization; K₄₃ two-violation frontier | [PDF](papers/ramsey-r55/main.pdf) | — | [TeX](papers/ramsey-r55/main.tex) |
+| **Computational Lower Bounds for R(5,5)** (v1.0) | Constructive proof R(5,5) ≥ 43 via GF(43) cycle-type seeding + GPU optimization; K₄₃ two-violation frontier | [PDF](papers/ramsey-r55/main.pdf) | [On-Chain](https://plugins.whatsonchain.com/api/plugin/main/0d99022d4708ec13e3ba8bc6318d2904719c07bf54d18653a60637d6e77204bc/0) | [TeX](papers/ramsey-r55/main.tex) |
 
 ## Key Result
 
@@ -355,12 +355,14 @@ python scripts/reconstruct_J.py       # Rebuild coupling matrix from Reeds table
 
 ## On-Chain Anchoring
 
-Both papers are permanently anchored to the BSV blockchain via the SmartLedger IP Registry, providing immutable, timestamped proof of authorship.
+All four papers are permanently anchored to the BSV blockchain via the SmartLedger IP Registry, providing immutable, timestamped proof of authorship.
 
 | Paper | BSV Transaction | SHA-256 |
 |-------|-----------------|---------|
 | A Spectral Operator for the Riemann Hypothesis | [`d1e2303e...`](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0) | `2e1e7776...1bbc28` |
+| Complete Proofs: Spectral Operator Approach to RH | [`acc204db...`](https://plugins.whatsonchain.com/api/plugin/main/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989/0) | — |
 | The Universality Constant: Eleven Paths to Ω = 24 | [`ef8801b3...`](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | `e78189b2...a56e14` |
+| Computational Lower Bounds for R(5,5) | [`0d99022d...`](https://plugins.whatsonchain.com/api/plugin/main/0d99022d4708ec13e3ba8bc6318d2904719c07bf54d18653a60637d6e77204bc/0) | — |
 
 Registered by **SmartLedger Solutions** (CAGE: 10HF4, UEI: C5RUDT3WS844) on behalf of Bryan W. Daugherty, Gregory J. Ward, and Shawn M. Ryan.
 
