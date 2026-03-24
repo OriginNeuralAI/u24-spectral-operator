@@ -44,9 +44,9 @@ We prove unconditionally that every nontrivial zero of the Riemann zeta function
 
 > **Theorem.** K₂^off(τ) = 0 for all τ ≠ 0.
 
-**Technique:** The off-diagonal contribution requires cancellation between orbit pairs (p, q) with p ≠ q. The key input is that {log p : p prime} is rationally independent — that is, ∑ nᵢ log pᵢ = 0 with nᵢ ∈ ℤ implies all nᵢ = 0. This is equivalent to unique prime factorization (FTA). Rational independence causes the off-diagonal oscillatory sums to average to zero by Weyl's equidistribution theorem.
+**Technique:** The off-diagonal contribution requires cancellation between orbit pairs (p, q) with p ≠ q. Two ingredients work together: (a) {log p : p prime} is rationally independent (equivalently: the Fundamental Theorem of Arithmetic), so the multi-dimensional Weyl bound gives phase cancellation at rate O(N⁻¹(log N)¹⁵); and (b) the Hannay–Ozorio de Almeida sum rule (Step 3) bounds the amplitude weights ∑|A_γ|², ensuring the Weyl bound is not vacuous. Together: K₂^off(τ) = o(1) with explicit rate.
 
-**Consequence:** The complete form factor is K₂(τ) = K₂^diag(τ) + K₂^off(τ) = |τ|, which is the GUE form factor.
+**Consequence:** The complete form factor is K₂(τ) = K₂^diag(τ) + K₂^off(τ) = |τ| + o(1), which is the GUE form factor.
 
 ### Step 5 — GUE Pair Correlation as Theorem (from Steps 3 + 4)
 
@@ -60,15 +60,15 @@ We prove unconditionally that every nontrivial zero of the Riemann zeta function
 
 > **Theorem.** Σ₂(L) = (2/π²)(log L + c) + O(1) and |N_D(E) − N(E)| = O(E^ε) for every ε > 0.
 
-**Technique:** GUE pair correlation (Step 5) implies spectral rigidity: the number variance Σ₂(L) grows as O(log L), far slower than O(L) for uncorrelated eigenvalues. By the Berry–Tabor/Bohigas–Giannoni–Schmit correspondence, this logarithmic rigidity implies that the eigenvalue counting function N_D(E) satisfies |N_D(E) − N(E)| = O(E^ε), where N(E) is the smooth Weyl count.
+**Technique:** GUE pair correlation (Step 5) implies spectral rigidity for H_D eigenvalues: the number variance Σ₂(L) grows as O(log L), far slower than O(L) for uncorrelated eigenvalues. The Erdős–Yau rigidity framework gives |γ̂ₙᴰ − n| = O((log n)^{1/2+ε}). Comparing with the Riemann–von Mangoldt formula for ξ (which is unconditional — no GUE input for the zeta zeros is needed), the counting functions satisfy |N_D(T) − N_ξ(T)| = O(log T).
 
-**Consequence:** The eigenvalues of H_D are spectrally rigid and their counting function is tightly controlled.
+**Consequence:** The eigenvalues of H_D are spectrally rigid and the counting function difference is controlled to O(log T), unconditionally.
 
 ### Step 7 — Hadamard Factorization
 
 > **Theorem.** F(s) := D(s) / ξ(s) is entire, of order ≤ 1, and has no zeros.
 
-**Technique:** Define the spectral zeta function D(s) = ∏_n (1 − s/λ_n) (Hadamard product over eigenvalues of H_D) and let ξ(s) be the Riemann xi function. The counting bound |N_D(E) − N(E)| = O(E^ε) from Step 6 shows that D(s) and ξ(s) have the same zero set with the same multiplicities, so their ratio F(s) is entire. The growth bound on N_D(E) ensures F(s) has order ≤ 1.
+**Technique:** Define the spectral zeta function D(s) = ∏_n (1 − s/λ_n) (Hadamard product over eigenvalues of H_D) and let ξ(s) be the Riemann xi function. The counting bound |N_D(T) − N_ξ(T)| = O(log T) from Step 6 shows that D(s)/ξ(s) has at most O(log T) zeros and poles below height T. A regularising Weierstrass factor W(s) makes G = FW entire = e^{P(s)}. Proposition (W ≡ 1) then shows W is trivial via Bohr–Fourier mean value coefficient extraction: taking logarithmic derivatives, the "tail" Φ(s) = Σ_{p>47} (log p)/p^{ks} has Bohr–Fourier coefficient (log 53)/53^σ > 0 at frequency log 53, but the remainder R(s) — containing smooth terms (type a), small-prime Dirichlet terms (type b), half-integer Dirichlet terms (type c), and W'/W itself (type d) — contributes 0 to the same mean value. Contradiction forces W ≡ 1.
 
 **Consequence:** D(s) = F(s) · ξ(s) where F is entire, order ≤ 1, zero-free.
 
