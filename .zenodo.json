@@ -1,0 +1,41 @@
+{
+  "title": "U24 Spectral Operator: Verification Data and Analysis",
+  "description": "Complete verification data, analysis notebooks, and reproducibility scripts for two companion papers: 'A Spectral Operator for the Riemann Hypothesis' (v14.0) and 'The Universality Constant: Eleven Paths to Omega = 24' (v1.3). Includes 20 data files across 8 subdirectories, 8 Jupyter notebooks, and figure-regeneration scripts. All analysis reproducible with standard scientific Python.",
+  "creators": [
+    {
+      "name": "Daugherty, Bryan",
+      "affiliation": "OriginNeuralAI"
+    },
+    {
+      "name": "Ward, Gregory",
+      "affiliation": "OriginNeuralAI"
+    },
+    {
+      "name": "Ryan, Shawn",
+      "affiliation": "OriginNeuralAI"
+    }
+  ],
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Riemann hypothesis",
+    "spectral operator",
+    "random matrix theory",
+    "GUE universality",
+    "Monster group",
+    "moonshine",
+    "fine-structure constant",
+    "persistent homology",
+    "Leech lattice",
+    "24-cell"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/OriginNeuralAI/u24-spectral-operator",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "version": "1.0.0"
+}

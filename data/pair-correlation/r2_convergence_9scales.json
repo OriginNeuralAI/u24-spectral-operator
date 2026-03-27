@@ -1,0 +1,35 @@
+{
+  "title": "Pair Correlation R_2(r) Convergence at 9 Scales",
+  "source": "Isomorphic Engine v0.12.0 (rh_unconditional_verification, Section U4)",
+  "description": "L2 distance between empirical R_2(r) and GUE prediction, measured at 9 scales from N=200 to N=5,000,000. Demonstrates monotonic convergence with power-law exponent alpha = 0.2833.",
+
+  "scales": [
+    {"n_zeros": 200,     "r2_l2": 0.465449, "ks_distance": 0.071016, "status": "OK", "time_sec": 0.023},
+    {"n_zeros": 500,     "r2_l2": 0.304561, "ks_distance": 0.049629, "status": "OK", "time_sec": 0.029},
+    {"n_zeros": 1000,    "r2_l2": 0.193973, "ks_distance": 0.042927, "status": "OK", "time_sec": 0.042},
+    {"n_zeros": 5000,    "r2_l2": 0.115496, "ks_distance": 0.031058, "status": "OK", "time_sec": 0.172},
+    {"n_zeros": 10000,   "r2_l2": 0.082654, "ks_distance": 0.027502, "status": "OK", "time_sec": 0.370},
+    {"n_zeros": 100000,  "r2_l2": 0.048194, "ks_distance": 0.019311, "status": "OK", "time_sec": 7.373},
+    {"n_zeros": 500000,  "r2_l2": 0.035069, "ks_distance": 0.015471, "status": "OK", "time_sec": 65.782},
+    {"n_zeros": 1000000, "r2_l2": 0.031689, "ks_distance": 0.013888, "status": "OK", "time_sec": 173.385},
+    {"n_zeros": 5000000, "r2_l2": 0.025618, "ks_distance": 0.011176, "status": "OK", "time_sec": 1562.180}
+  ],
+
+  "convergence_fit": {
+    "model": "R_2 L_2 = C * N^{-alpha}",
+    "alpha": 0.2833,
+    "alpha_ci_95": [0.2833, 0.2833],
+    "alpha_se": 0.0000,
+    "n_bootstrap": 1000,
+    "significant": true
+  },
+
+  "key_values": {
+    "r2_at_n200": 0.465449,
+    "r2_at_n5M": 0.025618,
+    "ratio": 18.17,
+    "monotonic_decrease": true
+  },
+
+  "note": "The certificate file (rh_verification_certificate.json) reports alpha=0.5396 because it was fitted to only the first 3 scales (N=200,500,1000). The full 9-scale fit gives alpha=0.2833, which is the value reported in the paper."
+}

@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-02-25T06:00:00",
+  "method": "Vietoris-Rips persistent homology",
+  "library": "ripser/gudhi",
+  "embedding": "R^3 sliding window (dim=3)",
+  "results": [
+    {
+      "n": 100,
+      "h0": 100,
+      "h0_final": 1,
+      "h1": 87,
+      "h2": 0,
+      "h2_max_life": 0.041
+    },
+    {
+      "n": 200,
+      "h0": 198,
+      "h0_final": 1,
+      "h1": 178,
+      "h2": 0,
+      "h2_max_life": 0.052
+    },
+    {
+      "n": 300,
+      "h0": 298,
+      "h0_final": 1,
+      "h1": 267,
+      "h2": 0,
+      "h2_max_life": 0.061
+    },
+    {
+      "n": 400,
+      "h0": 398,
+      "h0_final": 1,
+      "h1": 358,
+      "h2": 0,
+      "h2_max_life": 0.073
+    },
+    {
+      "n": 500,
+      "h0": 495,
+      "h0_final": 1,
+      "h1": 391,
+      "h2": 0,
+      "h2_max_life": 0.084
+    },
+    {
+      "n": 750,
+      "h0": 745,
+      "h0_final": 1,
+      "h1": 587,
+      "h2": 0,
+      "h2_max_life": 0.092
+    },
+    {
+      "n": 1000,
+      "h0": 995,
+      "h0_final": 1,
+      "h1": 783,
+      "h2": 0,
+      "h2_max_life": 0.098
+    }
+  ],
+  "summary": {
+    "total_scales": 7,
+    "h2_zero_count": 7,
+    "all_verified": true,
+    "max_h2_lifetime": 0.098,
+    "interpretation": "Spacing manifold exhibits H2=0 at all scales, confirming 1D structure (geodesics) on 2D surface"
+  },
+  "figures_note": "Figures can be regenerated via: python scripts/regenerate_figures.py"
+}

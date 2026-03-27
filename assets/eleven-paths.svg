@@ -1,0 +1,90 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="500" fill="#0A2540"/>
+
+  <!-- Title -->
+  <text x="400" y="50" font-size="24" fill="#FFFFFF" text-anchor="middle">Eleven Paths to Ω = 24</text>
+
+  <!-- Central Hub -->
+  <g filter="url(#glow)">
+    <circle cx="400" cy="250" r="80" fill="#D4AF37"/>
+  </g>
+  <text x="400" y="258" font-size="28" fill="#0A2540" font-weight="bold" text-anchor="middle">Ω = 24</text>
+
+  <!-- Spokes and Endpoint Circles -->
+  <!-- Coordinates calculated for: -->
+  <!-- Center: (400, 250) -->
+  <!-- Central circle radius: 80 -->
+  <!-- Endpoint circle radius: 30 -->
+  <!-- Distance from main center to endpoint circle center: 200 -->
+  <!-- Angle step: 360 / 11 degrees -->
+  <!-- Starting angle: -90 degrees (straight up) -->
+
+  <!-- 1. dim Λ₂₄ -->
+  <line x1="400.00" y1="170.00" x2="400.00" y2="220.00" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="400.00" cy="170.00" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="400.00" y="175" font-size="14" fill="#FFFFFF" text-anchor="middle">dim Λ₂₄</text>
+
+  <!-- 2. |S₄| -->
+  <line x1="446.88" y1="184.88" x2="470.32" y2="192.41" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="486.88" cy="197.59" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="486.88" y="202.59" font-size="14" fill="#FFFFFF" text-anchor="middle">|S₄|</text>
+
+  <!-- 3. c (Monster) -->
+  <line x1="478.08" y1="210.66" x2="497.04" y2="217.70" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="515.99" cy="224.74" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="515.99" y="229.74" font-size="14" fill="#FFFFFF" text-anchor="middle">c (Monster)</text>
+
+  <!-- 4. Ramanujan τ -->
+  <line x1="499.99" y1="249.99" x2="519.99" y2="249.99" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="539.99" cy="250.00" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="539.99" y="255" font-size="14" fill="#FFFFFF" text-anchor="middle">Ramanujan τ</text>
+
+  <!-- 5. 24-cell -->
+  <line x1="478.08" y1="289.34" x2="497.04" y2="282.30" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="515.99" cy="275.26" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="515.99" y="280.26" font-size="14" fill="#FFFFFF" text-anchor="middle">24-cell</text>
+
+  <!-- 6. τ_macro/τ_micro -->
+  <line x1="446.88" y1="315.12" x2="470.32" y2="307.59" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="486.88" cy="302.41" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="486.88" y="307.41" font-size="14" fill="#FFFFFF" text-anchor="middle">τ_macro/τ_micro</text>
+
+  <!-- 7. lcm orbits -->
+  <line x1="400.00" y1="330.00" x2="400.00" y2="380.00" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="400.00" cy="410.00" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="400.00" y="415" font-size="14" fill="#FFFFFF" text-anchor="middle">lcm orbits</text>
+
+  <!-- 8. dim E₈/dim SU(5) -->
+  <line x1="353.12" y1="315.12" x2="329.68" y2="307.59" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="313.12" cy="302.41" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="313.12" y="307.41" font-size="14" fill="#FFFFFF" text-anchor="middle">dim E₈/dim SU(5)</text>
+
+  <!-- 9. String theory -->
+  <line x1="321.92" y1="289.34" x2="302.96" y2="282.30" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="284.01" cy="275.26" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="284.01" y="280.26" font-size="14" fill="#FFFFFF" text-anchor="middle">String theory</text>
+
+  <!-- 10. Dedekind η -->
+  <line x1="300.01" y1="249.99" x2="280.01" y2="249.99" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="260.01" cy="250.00" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="260.01" y="255" font-size="14" fill="#FFFFFF" text-anchor="middle">Dedekind η</text>
+
+  <!-- 11. Kissing number -->
+  <line x1="321.92" y1="210.66" x2="302.96" y2="217.70" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="284.01" cy="224.74" r="30" fill="white" fill-opacity="0.1" stroke="#D4AF37" stroke-width="1.5"/>
+  <text x="284.01" y="229.74" font-size="14" fill="#FFFFFF" text-anchor="middle">Kissing number</text>
+
+  <!-- Bottom Text -->
+  <text x="400" y="470" font-size="14" fill="#D4AF37" text-anchor="middle">α_EM ≈ 1/137.03 (error 0.005%, zero free parameters)</text>
+</svg>
