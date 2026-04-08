@@ -1,0 +1,45 @@
+{
+  "title": "Gap B6: Time-Reversal Symmetry Breaking Verification",
+  "date": "2026-04-08",
+  "engine": "Isomorphic Engine v0.15.0",
+  "hardware": "RTX 6000 Ada, 62GB RAM, 8 vCPU",
+  "result": "TRS IS BROKEN — GUE (beta=2) selected over GOE (beta=1)",
+
+  "directed_adjacency_asymmetry": {
+    "frobenius_norm_A_minus_AT": 6.324555,
+    "asymmetric_entries": 40,
+    "total_entries": 529
+  },
+
+  "anti_symmetric_part_G": {
+    "rank": 14,
+    "expected_rank": 14,
+    "note": "rank(G) = number of transient elements",
+    "singular_values": [
+      0.5000, 0.5000, 0.5000, 0.5000, 0.5997, 0.5997,
+      0.7071, 0.7071, 0.8660, 0.8660, 1.1791, 1.1791,
+      1.2247, 1.2247
+    ]
+  },
+
+  "bond_transfer_matrix_T": {
+    "frobenius_asymmetry_T_minus_TT": 4.006106,
+    "max_asymmetric_entry": 1.0,
+    "max_asymmetric_location": [2, 3],
+    "anti_symmetric_norm": 2.003053
+  },
+
+  "directed_edges_without_reverse": {
+    "count": 20,
+    "total": 23,
+    "examples": [
+      {"i": 0, "fi": 2, "ffi": 3, "note": "f(0)=2, f(2)=3 != 0"},
+      {"i": 1, "fi": 2, "ffi": 3, "note": "f(1)=2, f(2)=3 != 1"},
+      {"i": 2, "fi": 3, "ffi": 5, "note": "f(2)=3, f(3)=5 != 2"},
+      {"i": 3, "fi": 5, "ffi": 2, "note": "f(3)=5, f(5)=2 != 3"},
+      {"i": 4, "fi": 14, "ffi": 13, "note": "f(4)=14, f(14)=13 != 4"}
+    ]
+  },
+
+  "conclusion": "The bond-to-bond transfer matrix T for the directed Reeds graph satisfies T != T^T with ||T-T^T||_F = 4.006. This breaks time-reversal symmetry, selecting GUE universality class (beta=2) over GOE (beta=1). Issue B6 is CLOSED."
+}
