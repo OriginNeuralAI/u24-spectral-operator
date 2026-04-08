@@ -381,14 +381,17 @@ The Yang-Mills proof uses the same operator structure (H = J tensor I + I tensor
 
 ## On-Chain Anchoring
 
-All four papers are permanently anchored to the BSV blockchain via the SmartLedger IP Registry, providing immutable, timestamped proof of authorship.
+All papers are permanently anchored to the BSV blockchain via the SmartLedger IP Registry, providing immutable, timestamped proof of authorship.
 
-| Paper | BSV Transaction | SHA-256 |
-|-------|-----------------|---------|
-| A Spectral Operator for the Riemann Hypothesis | [`d1e2303e...`](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0) | `2e1e7776...1bbc28` |
-| Complete Proofs: Spectral Operator Approach to RH | [`acc204db...`](https://plugins.whatsonchain.com/api/plugin/main/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989/0) | — |
-| The Universality Constant: Eleven Paths to Ω = 24 | [`ef8801b3...`](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0) | `e78189b2...a56e14` |
-| Computational Lower Bounds for R(5,5) | [`0d99022d...`](https://plugins.whatsonchain.com/api/plugin/main/0d99022d4708ec13e3ba8bc6318d2904719c07bf54d18653a60637d6e77204bc/0) | — |
+| Paper | Version | BSV Transaction | SHA-256 |
+|-------|---------|-----------------|---------|
+| Spectral Operator (original) | v14.0 | [`d1e2303e...`](https://whatsonchain.com/tx/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02) | `2e1e7776...1bbc28` |
+| **Spectral Operator (updated)** | **v14.1** | [`aa4b5dd4...`](https://whatsonchain.com/tx/aa4b5dd4f67017fe6aace3ab4cac28b132e5d1ec7afe6f3b3522f51677855a70) | `23cd849a1fe4...fa4c13` |
+| Complete Proofs (original) | v1.0 | [`acc204db...`](https://whatsonchain.com/tx/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989) | — |
+| **Complete Proofs (updated)** | **v1.1** | [`148b6c38...`](https://whatsonchain.com/tx/148b6c38410043afe3ec84fb64d63223c424ebb84db9f3da56a652808b872883) | `5bde7bf024f4...a7a77c` |
+| Universality Constant | v1.3 | [`ef8801b3...`](https://whatsonchain.com/tx/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7) | `e78189b2...a56e14` |
+| R(5,5) Lower Bounds | v1.0 | [`0d99022d...`](https://whatsonchain.com/tx/0d99022d4708ec13e3ba8bc6318d2904719c07bf54d18653a60637d6e77204bc) | — |
+| **Gap-Closing Campaign** | Apr 2026 | [`bb48ed5c...`](https://whatsonchain.com/tx/bb48ed5cf1ecb3ae366b7d67da027c5fd253846e1141bf8bb195644848231dfa) | (computational results) |
 
 Registered by **SmartLedger Solutions** (CAGE: 10HF4, UEI: C5RUDT3WS844) on behalf of Bryan W. Daugherty, Gregory J. Ward, and Shawn M. Ryan.
 
