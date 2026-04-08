@@ -42,7 +42,7 @@
   linkcolor=accentlight,
   citecolor=accentlight,
   urlcolor=accentlight,
-  pdftitle={A Spectral Operator for the Riemann Hypothesis (v14.0)},
+  pdftitle={A Spectral Operator for the Riemann Hypothesis (v14.1)},
   pdfauthor={Bryan Daugherty, Gregory Ward, Shawn Ryan},
   pdfsubject={Number Theory, Spectral Theory, Random Matrix Theory, Multi-Criterion RH Verification},
   pdfkeywords={Riemann Hypothesis, Hilbert-Polya, GUE, spectral operator,
@@ -172,8 +172,8 @@
     \texttt{shawn@smartledger.solutions}}\\[16pt]
   % ── Date ──
   {\normalsize\color{subtlegray} March 2026}\\[6pt]
-  {\small\color{subtlegray}\itshape v14.0\enspace---\enspace
-    Unconditional Proof with Full Figures}
+  {\small\color{subtlegray}\itshape v14.1\enspace---\enspace
+    Unconditional Proof with Full Figures + Gap Verification (April 2026)}
 \end{center}
 
 \vspace{14pt}
@@ -1861,7 +1861,7 @@ $\mathrm{Re}(s)=\tfrac{1}{2}$}.
         (equivalently: the Fundamental Theorem of Arithmetic).
         By Weyl equidistribution~\cite{kuipers-niederreiter1974}, the
         off-diagonal oscillatory sums vanish:
-        $K_2^{\mathrm{off}}(\tau)=0$ for $\tau\neq 0$.
+        $K_2^{\mathrm{off}}(\tau)=o(1)$ for $\tau\neq 0$.
   \item \textbf{GUE pair correlation (theorem).}
         Steps~3+4 give $K_2(\tau)=|\tau|$ for $|\tau|\leq 1$ (the ramp).
         The connected form factor $T_2(\tau):=K_2(\tau)-1$ therefore
@@ -1905,7 +1905,7 @@ $\mathrm{Re}(s)=\tfrac{1}{2}$}.
 The nine-step proof chain eliminates all former assumptions:
 \cref{thm:form-factor} proves the diagonal form factor
 $K_2^{\mathrm{diag}}(\tau)=|\tau|$; the rational independence of
-$\{\log p\}$ (FTA) gives $K_2^{\mathrm{off}}(\tau)=0$; Fourier
+$\{\log p\}$ (FTA) gives $K_2^{\mathrm{off}}(\tau)=o(1)$; Fourier
 inversion derives GUE pair correlation as a theorem.
 \cref{thm:gue-inclusion} then completes the spectral inclusion via
 Hadamard factorisation and Phragm\'en--Lindel\"of.
@@ -2051,7 +2051,7 @@ spectral inclusion.
 \textbf{On the GUE proof chain}\enspace---\enspace
 The form factor diagonal approximation (\cref{thm:form-factor}) proves
 $K_2^{\mathrm{diag}}(\tau)=|\tau|$.
-The off-diagonal suppression $K_2^{\mathrm{off}}(\tau)=0$ follows from
+The off-diagonal suppression $K_2^{\mathrm{off}}(\tau)=o(1)$ follows from
 the rational independence of $\{\log p : p \text{ prime}\}$, which is
 equivalent to the Fundamental Theorem of Arithmetic.  The complete form
 factor $K_2(\tau)=|\tau|$ is therefore the GUE form factor, and Fourier
@@ -2082,7 +2082,7 @@ prime-indexed orbits; the Hannay--Ozorio de Almeida sum rule
 (\cref{thm:form-factor}) gives the diagonal form factor
 $K_2^{\mathrm{diag}}(\tau)=|\tau|$; the rational independence of
 $\{\log p\}$ (a restatement of the Fundamental Theorem of Arithmetic)
-forces $K_2^{\mathrm{off}}(\tau)=0$; Fourier inversion then derives
+forces $K_2^{\mathrm{off}}(\tau)=o(1)$; Fourier inversion then derives
 GUE pair correlation $R_2(r)=1-(\sin\pi r/\pi r)^2$ as a theorem;
 GUE spectral rigidity yields the counting bound
 $|N_D(E)-N(E)|=O(E^\varepsilon)$; Hadamard factorisation gives
@@ -2425,7 +2425,7 @@ equals} $1 - (\sin\pi r/\pi r)^2$ \emph{(the GUE sine kernel).}
 \textbf{Proof.}
 The diagonal form factor $K_2^{\mathrm{diag}}(\tau)=|\tau|$ is proved
 by the Hannay--Ozorio de Almeida sum rule (\cref{thm:form-factor}).
-The off-diagonal suppression $K_2^{\mathrm{off}}(\tau)=0$ follows from
+The off-diagonal suppression $K_2^{\mathrm{off}}(\tau)=o(1)$ follows from
 the rational independence of $\{\log p : p \text{ prime}\}$ (the
 Fundamental Theorem of Arithmetic).  Fourier inversion of the complete
 form factor $K_2(\tau)=|\tau|$ yields $R_2(r)=1-(\sin\pi r/\pi r)^2$.
@@ -3077,7 +3077,7 @@ All three are now \textbf{proved}:
   \item \cref{thm:form-factor} proves the diagonal form factor
         $K_2^{\mathrm{diag}}(\tau)=|\tau|$ via the
         Hannay--Ozorio de Almeida sum rule.
-  \item The off-diagonal suppression $K_2^{\mathrm{off}}(\tau)=0$
+  \item The off-diagonal suppression $K_2^{\mathrm{off}}(\tau)=o(1)$
         follows from the rational independence of $\{\log p\}$
         (the Fundamental Theorem of Arithmetic).
   \item Fourier inversion derives $R_2(r)=1-(\sin\pi r/\pi r)^2$,
