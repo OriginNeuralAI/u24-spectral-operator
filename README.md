@@ -113,6 +113,16 @@ Six structural gaps (B1–B6) identified in the complete-proofs paper were subje
 **Secular Equation Breakthrough:** The quantum graph Laplacian on Γ₀(23) with bond lengths {log p : p ≤ 47}, solved via det(I − S·D(k)) = 0, produces eigenvalues matching all 169 testable Riemann zeta zeros at 0.001 resolution with **mean error 0.23%**. Best individual match: γ₂₀ at 0.015% error. This bypasses the Weyl law density mismatch entirely.
 
 <div align="center">
+<img src="assets/secular-equation-results.svg" alt="Secular equation: 169/169 Riemann zeta zeros matched at 0.23% mean error" width="800"/>
+</div>
+
+### How This Compares to Prior Approaches
+
+<div align="center">
+<img src="assets/comparison-approaches.svg" alt="Comparison: H_D vs Berry-Keating, Connes, Sierra-Townsend, Bender-Brody-Müller" width="800"/>
+</div>
+
+<div align="center">
 <img src="assets/verification-pipeline.svg" alt="Verification pipeline: 140/140 checks pass" width="720"/>
 </div>
 
