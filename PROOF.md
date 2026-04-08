@@ -155,8 +155,8 @@ All data is available in the [u24-spectral-operator repository](https://github.c
 
 ## References
 
-- **Paper 1:** B. Daugherty, G. Ward, S. Ryan, "A Spectral Operator for the Riemann Hypothesis" (v14.0, March 2026). [PDF](papers/spectral-operator/main.pdf) · [BSV](https://plugins.whatsonchain.com/api/plugin/main/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02/0)
-- **Paper 1b:** B. Daugherty, G. Ward, S. Ryan, "Complete Proofs: Spectral Operator Approach to RH" (v1.0, March 2026). [PDF](papers/complete-proofs/complete-proofs.pdf) · [BSV](https://plugins.whatsonchain.com/api/plugin/main/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989/0)
+- **Paper 1:** B. Daugherty, G. Ward, S. Ryan, "A Spectral Operator for the Riemann Hypothesis" (v14.1, April 2026). [PDF](papers/spectral-operator/main.pdf) · [BSV (v14.0)](https://whatsonchain.com/tx/d1e2303e0fa724156f1cb1b8e3aa0eded379b9b4354633ac36ea48dbbba18b02) · [BSV (v14.1)](https://whatsonchain.com/tx/aa4b5dd4f67017fe6aace3ab4cac28b132e5d1ec7afe6f3b3522f51677855a70)
+- **Paper 1b:** B. Daugherty, G. Ward, S. Ryan, "Complete Proofs: Spectral Operator Approach to RH" (v1.1, April 2026). [PDF](papers/complete-proofs/complete-proofs.pdf) · [BSV (v1.0)](https://whatsonchain.com/tx/acc204dbfc82f97be28c01079699c182362e52ab488bd43df8b0f71809ae3989) · [BSV (v1.1)](https://whatsonchain.com/tx/148b6c38410043afe3ec84fb64d63223c424ebb84db9f3da56a652808b872883)
 - **Paper 2:** B. Daugherty, G. Ward, S. Ryan, "The Universality Constant: Eleven Paths to Ω = 24" (v1.3, March 2026). [PDF](papers/universality-constant/main.pdf) · [BSV](https://plugins.whatsonchain.com/api/plugin/main/ef8801b34933ef2d6a7a824095f9be01bf41f11f3c9317229c307fccf774e1d7/0)
 
 ---
