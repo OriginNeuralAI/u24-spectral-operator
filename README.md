@@ -36,6 +36,10 @@
 >
 > Fine-structure constant **α_EM ≈ 1/137.03**
 
+> **Caveats & Honest Limitations:** Three of six structural gaps (B4 zero matching, B1 density, B5 W=1) remain open. The proof is unconditional in its logical structure, but the zero-matching step relies on the secular equation (169/169 zeros at 0.23% — strong numerical evidence, not yet an analytic proof). We document every gap explicitly in the [Structural Notes](#gap-verification-april-2026) and [FAQ](FAQ.md). Verification at N > 2,000 requires the proprietary Isomorphic Engine.
+
+**Start Here:** [FAQ](FAQ.md) · [Reproduce in 30 seconds](#reproduce) · [Essays on the narrative arc](https://github.com/OriginNeuralAI/Papers/tree/main/essays) · [CHANGELOG](CHANGELOG.md)
+
 ## Papers
 
 | Paper | Description | PDF | BSV | LaTeX |
@@ -378,6 +382,19 @@ The spectral operator framework extends to gauge theory. The **Killing form iden
 | **[u24-Yang-Mills](https://github.com/OriginNeuralAI/u24-Yang-Mills)** | Mass gap Delta > 0 for all compact simple G | 15/15 predictions, 59/59 checks |
 
 The Yang-Mills proof uses the same operator structure (H = J tensor I + I tensor T + V), the same Kato-Rellich self-adjointness argument, and the same Omega = 24 universality constant — with the Killing form replacing the Reeds coupling matrix.
+
+## Reproduce
+
+Verify the core claims with standard Python (no engine required):
+
+```bash
+git clone https://github.com/OriginNeuralAI/u24-spectral-operator.git
+cd u24-spectral-operator
+pip install numpy scipy matplotlib jupyter
+jupyter notebook notebooks/01_explore_data.ipynb
+```
+
+All GUE pair correlation, eigenvalue comparison, and topology checks at N ≤ 2,000 run on a laptop in under 5 minutes. For the full 5M-zero verification, see `scripts/validate_data.py`.
 
 ## On-Chain Anchoring
 
